@@ -42,6 +42,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'jquery-rails'
+  gem 'rufo'
 end
 
 group :development do
