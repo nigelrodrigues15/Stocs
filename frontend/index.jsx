@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Root from './components/root';
 import configureStore from './store/store';
 
 //Temporary for testing
@@ -8,7 +9,9 @@ import { login, logout, signup } from './util/session_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-    ReactDOM.render(<h1>Its working :) </h1>, root);
+    const store = configureStore();
+
+    ReactDOM.render(<Root store={ store }/>, root);
 
     //Temporary for testing
     window.login = login;
