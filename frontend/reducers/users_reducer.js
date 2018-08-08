@@ -8,7 +8,6 @@ const usersReducer = (state = {}, action) => {
 
         case RECEIVE_CURRENT_USER:
             return merge({}, state, { [action.currentUser.id]: action.currentUser });
-        //NTR check currentUser?
         default:
             return state;
     }
