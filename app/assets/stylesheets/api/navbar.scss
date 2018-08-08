@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #21ce99;
+  border: 1px solid black;
+
+  img {
+    display: inline-block;
+    width: auto;
+    height: 50px;
+    padding: 0px;
+    justify-content: start;
+    border: 1px solid black;
+  }
+
+  nav-link {
+    // display: inline-block;
+    // padding: 1vw;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+
+}
