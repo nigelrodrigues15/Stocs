@@ -10,8 +10,8 @@ class Navbar extends React.Component {
   sessionLinks() {
     return (
       <div className="nav-link">
-        <Link to="/login">Log In</Link>
-        <Link to="/signup">Sign up</Link>
+        <p><Link to="/login">Log In</Link></p>
+        <p><Link to="/signup">Sign up</Link></p>
       </div>
     );
   }
@@ -19,7 +19,7 @@ class Navbar extends React.Component {
   greeting() {
     return (
       <div className="nav-link" >
-        <p className="home">Home</p>
+        <p>Home</p>
         <p onClick={this.props.logout}>
           <Link to="/">Log Out</Link>
         </p>
@@ -28,12 +28,12 @@ class Navbar extends React.Component {
   }
 
   render() {
-    const func = this.props.currentUser ? this.greeting() : this.sessionLinks();
+    const greeting = this.props.currentUser ? this.greeting() : this.sessionLinks();
 
     return (
       <div className="navbar">
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Robinhood_Logo.png" />
-        {func}
+        {greeting}
       </div>
     );
   }
