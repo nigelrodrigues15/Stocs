@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-document.addEventListener('DOMContentLoaded', () => {
-    const root = document.getElementById('root');
-    ReactDOM.render(<h1>Its working :) </h1>, root);
-});
-=======
 import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
@@ -45,4 +36,3 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   //End testing
 });
->>>>>>> userAuth
