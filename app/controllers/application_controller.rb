@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-<<<<<<< HEAD
-=======
 
   helper_method :current_user
 
@@ -28,5 +26,4 @@ class ApplicationController < ActionController::Base
     render json: { errors: ['Invalid Credentials'] } unless current_user
   end
 
->>>>>>> userAuth
 end
