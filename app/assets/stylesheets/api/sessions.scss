@@ -1,3 +1,42 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+
+  .form-container {
+    justify-content: center;
+    align-self: center;
+
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+
+    .input {
+      width: 253px;
+      padding: 15px 20px;
+      margin: 4px 4px;
+    }
+
+    .input-name {
+      width: 100px;
+      padding: 15px 20px;
+      margin: 4px 4px;
+    }
+    .session-submit {
+      width: 298px;
+      padding: 15px 20px;
+      margin: 4px 4px;
+    }
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    line-height: 30px;
+    margin: 0 0 16px;
+  }
+}

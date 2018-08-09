@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+/* @import "constants" */
+
+ * {
+    font-family: "DIN Pro", sans-serif;
+    /* background-color: $background-dark; */
+ }

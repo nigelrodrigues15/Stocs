@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
     event.preventDefault();
 
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push('/'));;
+    this.props.processForm(user).then(() => this.props.history.push("/"));
   }
 
   renderErrors() {
@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
           type="text"
           value={this.state.fname}
           onChange={this.update("fname")}
-          className="input input-name"
+          className="input-name"
           placeholder="First Name"
         />
 
@@ -53,7 +53,7 @@ class SessionForm extends React.Component {
           type="text"
           value={this.state.lname}
           onChange={this.update("lname")}
-          className="input input-name"
+          className="input-name"
           placeholder="Last Name"
         />
         <br />
@@ -86,26 +86,38 @@ class SessionForm extends React.Component {
           className="input"
           placeholder="Password (min. 10 characters)"
         />
-        <br />
-        <input
-          className="session-submit"
-          type="submit"
-          value={this.props.formType}
-        />
       </div>
     );
   }
 
   render() {
+    let greeting;
+    let button;
+    if (this.props.formType === "signup") {
+      greeting = "Sign Up to Learn About Stocs";
+      button = "Sign Up";
+    } else {
+      greeting = "Welcome to Stocs";
+      button = "Log In";
+    }
+
     return (
       <div className="login-form-container">
+      <div className="form-container">
+        <br />
+        <h2>{greeting}</h2>
         <form onSubmit={this.handleSubmit}>
-          <br />
-          Please {this.props.formType}
           {this.props.formType === "signup" ? this.signupForm() : null}
           {this.loginForm()}
           {this.renderErrors()}
+          <input
+            className="input session-submit"
+            type="submit"
+            value={button}
+          />
         </form>
+        <br />
+      </div>
       </div>
     );
   }
