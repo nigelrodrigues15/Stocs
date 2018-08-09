@@ -11,10 +11,10 @@ class Navbar extends React.Component {
     return (
       <div className="nav-link">
         <p>
-          <Link to="/login">Log In</Link>
+          <Link className="logging" to="/login">Log In</Link>
         </p>
         <p>
-          <Link to="/signup">Sign up</Link>
+          <Link className="logging" to="/signup">Sign up</Link>
         </p>
       </div>
     );
@@ -23,9 +23,9 @@ class Navbar extends React.Component {
   greeting() {
     return (
       <div className="nav-link">
-        <p>Home</p>
+        <p className="logging">Home</p>
         <p onClick={this.props.logout}>
-          <Link to="/">Log Out</Link>
+          <Link className="logging" to="/">Log Out</Link>
         </p>
       </div>
     );
