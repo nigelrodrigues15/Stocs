@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
- root to: 'static_pages#root'
- 
-=======
   root to: 'static_pages#root'
 
   namespace :api, defaults: {format: :json} do
@@ -10,5 +6,4 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
   end
 
->>>>>>> userAuth
 end

@@ -12,10 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-<<<<<<< HEAD
-=======
 /storage/*
->>>>>>> userAuth
 
 /node_modules
 /yarn-error.log
