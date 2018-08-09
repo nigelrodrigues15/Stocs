@@ -16,6 +16,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    this.props.removeErrors()
+  }
+
   update(type) {
     return event => this.setState({ [type]: event.currentTarget.value });
   }
@@ -29,7 +33,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
@@ -103,21 +107,21 @@ class SessionForm extends React.Component {
 
     return (
       <div className="login-form-container">
-      <div className="form-container">
-        <br />
-        <h2>{greeting}</h2>
-        <form onSubmit={this.handleSubmit}>
-          {this.props.formType === "signup" ? this.signupForm() : null}
-          {this.loginForm()}
-          {this.renderErrors()}
-          <input
-            className="input session-submit"
-            type="submit"
-            value={button}
-          />
-        </form>
-        <br />
-      </div>
+        <div className="form-container">
+          <br />
+          <h2>{greeting}</h2>
+          <form onSubmit={this.handleSubmit}>
+            {this.props.formType === "signup" ? this.signupForm() : null}
+            {this.loginForm()}
+            {this.renderErrors()}
+            <input
+              className="input session-submit"
+              type="submit"
+              value={button}
+            />
+          </form>
+          <br />
+        </div>
       </div>
     );
   }
