@@ -22,13 +22,17 @@
 
   .nav-link p {
     display: inline-block;
-    padding: 0px 15px;
+    padding-right: 50px;
     margin: 0 auto;
-    //   border: 1px solid black;
+    color: $robin-green;
+    // border: 1px solid white;
+  }
 
-    * {
-      text-decoration: none;
-      color: $robin-green;
-    }
+  .logging {
+    color: $robin-green;
+    text-decoration: none;
+  }
+  .logging:hover {
+    color: $robin-green-light;
   }
 }

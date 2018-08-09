@@ -5,11 +5,15 @@
 
 .login-form-container {
   display: flex;
-  flex-direction: column;
+  background-color: $background-dark;
+  color: lightgray;
+  height: 100vh;
 
   .form-container {
+    flex-direction: column;
     justify-content: center;
     align-self: center;
+    margin: 0 auto;
 
     font-size: 13px;
     font-weight: 400;
@@ -18,7 +22,13 @@
     input {
       width: 253px;
       padding: 15px 20px;
-      margin: 4px 4px;
+      margin: 5px 5px;
+      border: 1px solid $placeholder;
+      background-color: $background-dark;
+      color: $robin-green-light;
+    }
+    ::placeholder {
+      color: $placeholder;
     }
     input:hover {
       border: 1px solid $robin-green;
@@ -34,13 +44,17 @@
     .input-name {
       width: 100px;
       padding: 15px 20px;
-      margin: 4px 4px;
+      margin: 5px 5px;
     }
     .session-submit {
       width: 298px;
       padding: 15px 20px;
-      margin: 4px 4px;
+      margin: 5px 5px;
       background-color: $robin-green;
+      color: $robin-white;
+    }
+    .session-submit:hover {
+      background-color: $robin-green-light;
     }
   }
 
