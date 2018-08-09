@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+<% if current_user %>
+  <script id="bootstrap-current-user" type="text/javascript">
+  	window.currentUser = <%= render("api/users/user.json.jbuilder",
+  		user: current_user).html_safe %>
+  </script>
+  <% end %>
+
+>>>>>>> userAuth
 <main id="root"> 
     <h1> React is not working :( </h1>
 </main>

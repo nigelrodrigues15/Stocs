@@ -12,6 +12,11 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
+<<<<<<< HEAD
+=======
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+>>>>>>> userAuth
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   },
@@ -22,9 +27,20 @@
     "lib": "lib",
     "test": "test"
   },
+<<<<<<< HEAD
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development"
+=======
+  "engines": {
+    "node": "8.4.0",
+    "npm": "6.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack"
+>>>>>>> userAuth
   },
   "repository": {
     "type": "git",
