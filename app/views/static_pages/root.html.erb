@@ -1,12 +1,22 @@
 <% if current_user %>
   <script id="bootstrap-current-user" type="text/javascript">
-  	window.currentUser = <%= render("api/users/user.json.jbuilder",
-  		user: current_user).html_safe %>
+    window.currentUser = <%= render("api/users/user.json.jbuilder",
+      user: current_user).html_safe %>
   </script>
   <% end %>
 
-<main id="root"> 
-    <h1> React is not working :( </h1>
-</main>
 
-<%= image_tag "Wheelie.gif" %>
+    <script type="text/javascript">
+        window.images = {
+        wheelie: "<%= asset_path("Wheelie.gif") %>",
+        splash1: "<%= asset_path("splash-1.png") %>",
+        splash2: "<%= asset_path("splash-2.png") %>",
+        splash3: "<%= asset_path("splash-3.png") %>",
+        logo: "<%= asset_path("Logo.png") %>"
+      }
+    </script>
+
+    <main id="root">
+      <h1> React is not working :( </h1>
+      <%= image_tag "Wheelie.gif" %>
+    </main>
