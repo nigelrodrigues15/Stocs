@@ -11,10 +11,14 @@ class Navbar extends React.Component {
     return (
       <div className="nav-link">
         <p>
-          <Link className="logging" to="/login">Log In</Link>
+          <Link className="logging" to="/login">
+            Log In
+          </Link>
         </p>
         <p>
-          <Link className="logging" to="/signup">Sign up</Link>
+          <Link className="logging" to="/signup">
+            Sign up
+          </Link>
         </p>
       </div>
     );
@@ -25,8 +29,18 @@ class Navbar extends React.Component {
       <div className="nav-link">
         <p className="logging">Home</p>
         <p onClick={this.props.logout}>
-          <Link className="logging" to="/">Log Out</Link>
+          <Link className="logging" to="/">
+            Log Out
+          </Link>
         </p>
+      </div>
+    );
+  }
+
+  searchbar() {
+    return (
+      <div className="search-bar">
+        <input type="text" placeholder="Search" />
       </div>
     );
   }
@@ -38,12 +52,22 @@ class Navbar extends React.Component {
 
     return (
       <div className="navbar">
-        <Link to="/">
-        <div className="logo">
-        <logo className="logo-std"> <img src={window.images.logo} /> </logo>
-        <logo className="logo-hov"> <img src={window.images.logoHover} /> </logo>
+        <div className="nav-left">
+          <Link to="/">
+            <div className="logo">
+              <logo className="logo-std">
+                {" "}
+                <img src={window.images.logo} />{" "}
+              </logo>
+              <logo className="logo-hov">
+                {" "}
+                <img src={window.images.logoHover} />{" "}
+              </logo>
+            </div>
+          </Link>
+
+          {this.searchbar()}
         </div>
-        </Link>
         {greeting}
       </div>
     );
@@ -51,4 +75,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-

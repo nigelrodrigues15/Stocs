@@ -16,7 +16,7 @@ User.create({fname: "Nigel", lname: "Rodrigues", email: "nigel1@ualberta.ca", us
 # p "#{Rails.root}"
 # data = CSV.read("NASDAQ.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
 # data = CSV.read("/app/assets/companies/NASDAQ.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
-data = CSV.read("./app/assets/companies/NASDAQ.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
+data = CSV.read("#{Rails.root}/app/assets/companies/NASDAQ.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
 
 hashed_data = data.map { |d| d.to_hash }
 columnns = [:symbol, :name, :lastsale, :sector, :industry]

@@ -17,31 +17,66 @@
     width: auto;
     height: 35px;
     padding-left: 30px;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
   }
-  
+
+  .logo {
+    display: inline-block;
+  }
+
   .logo-hov {
     display: none;
   }
+
   .logo:hover .logo-std {
     display: none;
   }
+
   .logo:hover .logo-hov {
     display: inline-block;
   }
 
+  .nav-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-bar {
+    display: inline-flex;
+    // padding-right: 50px;
 
-  // .logo-hov:hover {
-  //   display: inline-block;
-  // }
-
-  // .logo-std:hover {
-  //   display: none;
-  // }
-
-  // .logo-std {
-  //   display: inline-block;
-  // }
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    input {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.25px;
+      margin: 0 auto;
+      border-radius: 2px;
+      display: inline-block;
+      margin-left: 50px;
+      border: 1px solid $placeholder;
+      background-color: $background-dark;
+      color: $robin-green-light;
+      padding: 5px;
+      width: 40vw;
+      justify-content: center;
+      align-items: center;
+    }
+    ::placeholder {
+      color: $placeholder;
+    }
+    input:hover {
+      border: 1px solid $robin-green;
+    }
+    input:focus {
+      border: 1px solid $robin-green;
+      box-shadow: 0 0 3px $robin-green;
+      outline: none;
+    }
+  }
 
   .nav-link p {
     display: inline-block;
