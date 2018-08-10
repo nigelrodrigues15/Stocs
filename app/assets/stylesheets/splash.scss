@@ -6,7 +6,7 @@
   background-color: $background-dark;
   display: grid;
   grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr);
-  grid-template-rows: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, 1fr);
 
   img {
     width: 30vw;
