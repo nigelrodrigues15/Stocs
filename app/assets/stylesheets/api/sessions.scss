@@ -69,6 +69,37 @@
   .errors {
     list-style-type: none;
     line-height: 20px;
+    padding: 2px;
+    margin: 2px;
+    // background-color: lightgray;
     color: $robin-red;
+  }
+}
+
+.demo {
+  display: inline-flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: -0.14px;
+  margin: 0 0 16px;
+  width: 296px;
+  padding-left: 7px;
+  // background-color: green;
+
+  .switch-login * {
+    text-decoration: none;
+    color: $robin-red;
+    h3:hover {
+      color: $robin-green;
+    }
+  }
+
+  .demo-login *{
+    text-decoration: none;
+    color: $robin-red;
+    h3:hover {
+      color: $robin-green;
+    }
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -15,6 +16,14 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogging = this.demoLogging.bind(this);
+
+    this.demoUser = {
+      fname: "Nigel",
+      lname: "Rodrigues",
+      email: "nigel1@ualberta.ca",
+      username: "nigel",
+      password: "0123456789"
+    };
   }
 
   componentWillMount() {
@@ -43,10 +52,8 @@ class SessionForm extends React.Component {
   }
 
   demoLogging() {
-    event.preventDefault();
-
-    const user = {username: "nigel", password: "0123456789"};
-    this.props.processForm(user).then(() => this.props.history.push("/"));
+    this.setState(this.demoUser);
+    this.props.processForm(this.demoUser).then(() => this.props.history.push("/"));
   }
 
   signupForm() {
@@ -104,12 +111,16 @@ class SessionForm extends React.Component {
 
   demoLogin() {
     return (
-      <div>
+      <div className="demo">
         <div className="switch-login">
-          <Link to="/login" ><h3>Already have an account?<h3 /></Link>
+          <Link to="/signup">
+            <h3> Sign Up</h3>
+          </Link>
         </div>
-        <div className="demo-login">
-          <Link onClick={this.demoLogging()} ><h3>Demo User<h3 /></Link>
+        <div onClick={() => this.demoLogging()} className="demo-login">
+          <Link to="#">
+            <h3>Demo User</h3>
+          </Link>
         </div>
       </div>
     );
@@ -134,13 +145,14 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             {this.props.formType === "signup" ? this.signupForm() : null}
             {this.loginForm()}
-            {this.renderErrors()}
+            {this.props.errors === [] ? null : this.renderErrors()}
             <input
               className="input session-submit"
               type="submit"
               value={button}
             />
           </form>
+          {this.props.formType === "signup" ? null : this.demoLogin()}
           <br />
         </div>
       </div>
