@@ -14,10 +14,11 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogging = this.demoLogging.bind(this);
   }
 
   componentWillMount() {
-    this.props.removeErrors()
+    this.props.removeErrors();
   }
 
   update(type) {
@@ -39,6 +40,13 @@ class SessionForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  demoLogging() {
+    event.preventDefault();
+
+    const user = {username: "nigel", password: "0123456789"};
+    this.props.processForm(user).then(() => this.props.history.push("/"));
   }
 
   signupForm() {
@@ -90,6 +98,19 @@ class SessionForm extends React.Component {
           className="input"
           placeholder="Password (min. 10 characters)"
         />
+      </div>
+    );
+  }
+
+  demoLogin() {
+    return (
+      <div>
+        <div className="switch-login">
+          <Link to="/login" ><h3>Already have an account?<h3 /></Link>
+        </div>
+        <div className="demo-login">
+          <Link onClick={this.demoLogging()} ><h3>Demo User<h3 /></Link>
+        </div>
       </div>
     );
   }
