@@ -39,7 +39,10 @@ class Navbar extends React.Component {
     return (
       <div className="navbar">
         <Link to="/">
-          <img src={window.images.logo} />
+        <div className="logo">
+        <logo className="logo-std"> <img src={window.images.logo} /> </logo>
+        <logo className="logo-hov"> <img src={window.images.logoHover} /> </logo>
+        </div>
         </Link>
         {greeting}
       </div>
@@ -48,3 +51,4 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
+

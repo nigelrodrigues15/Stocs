@@ -6,17 +6,42 @@
   margin: 0 auto;
   align-items: center;
   background-color: $background-dark;
+  // background-color: blue;
   position: fixed;
   width: 100vw;
+  height: 7vh;
   top: 0px;
 
   img {
     display: inline-block;
     width: auto;
-    height: 50px;
-    padding: 0px;
+    height: 35px;
+    padding-left: 30px;
     justify-content: start;
   }
+  
+  .logo-hov {
+    display: none;
+  }
+  .logo:hover .logo-std {
+    display: none;
+  }
+  .logo:hover .logo-hov {
+    display: inline-block;
+  }
+
+
+  // .logo-hov:hover {
+  //   display: inline-block;
+  // }
+
+  // .logo-std:hover {
+  //   display: none;
+  // }
+
+  // .logo-std {
+  //   display: inline-block;
+  // }
 
   .nav-link p {
     display: inline-block;
