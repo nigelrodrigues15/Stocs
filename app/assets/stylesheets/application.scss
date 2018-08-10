@@ -14,8 +14,9 @@
  *= require_self
  */
 
- @import "constants";
+@import "constants";
 
 * {
   font-family: "DIN Pro", sans-serif;
+  background-color: $background-dark;
 }

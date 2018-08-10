@@ -32,3 +32,40 @@
   }
 
 }
+
+@media (max-width: 500px) {
+  .splash {
+    margin-top: 50px;
+    color: $robin-white;
+    background-color: $background-dark;
+    // background-color: blue;
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  
+    img {
+      width: 30vw;
+      // object-fit: contain;
+    }
+  
+    div {
+      margin: 0 auto;
+      padding: 20px;
+    }
+  
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 50vh;
+    }
+  
+    * {
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+  
+  }
+
+}
