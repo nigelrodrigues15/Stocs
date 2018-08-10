@@ -9,8 +9,9 @@ const splash = () => {
             Investing.
             <br /> Now for the rest of us.
           </h1>
+          <br />
           <p>
-            Robinhood lets you learn to invest in the stock market for free.
+            Stocs lets you learn to invest in the stock market for free.
           </p>
         </div>
       </div>
@@ -18,26 +19,25 @@ const splash = () => {
         <img src={window.images.splash1} />
       </div>
       <div className="item-2-1">
-        <div>
-          <h1>Invest for free.</h1>
-          <p>
-            We believe that the financial system should work for the rest of us,
-            not just the wealthy. We’ve cut the fat that makes other brokerages
-            costly, like manual account management and hundreds of storefront
-            locations, so we can offer zero commission trading.
-          </p>
-        </div>
+        <img src={window.images.splash2} />
       </div>
       <div className="item-2-2">
-        <img src={window.images.splash2} />
+        <div>
+          <h1>Invest for free.</h1>
+          <br />
+          <p>
+            We believe that the financial system should work for the rest of us,
+            not just the wealthy. 
+          </p>
+        </div>
       </div>
       <div className="item-3-1">
         <div>
           <h1>Learn by doing.</h1>
+          <br />
           <p>
-            With Robinhood, you can learn to invest in the stock market as you
-            build out your portfolio. Discover new stocks through Collections,
-            track your favorites with a personalized news feed, and more.
+            With Stocs, you can learn to invest in the stock market as you
+            build out your portfolio.
           </p>
         </div>
       </div>
