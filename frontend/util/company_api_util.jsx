@@ -1,21 +1,21 @@
 export const fetchCompanies = () => (
     $.ajax({
       method: "GET",
-      url: "/api/company"
+      url: "/api/companies"
     })
   )
   
   export const fetchCompany = companyId => (
     $.ajax({
       method: "GET",
-      url: `/api/company/${companyId}`
+      url: `/api/companies/${companyId}`
     })
   )
-  
+
   export const updateLastSale = company => (
     $.ajax({
       method: "PATCH",
-      url: `/api/company/${company.id}`,
+      url: `/api/companies/${company.id}`,
       data: { company }
     })
   )

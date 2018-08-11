@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Search from "../search/search"
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -55,18 +56,18 @@ class Navbar extends React.Component {
         <div className="nav-left">
           <Link to="/">
             <div className="logo">
-              <logo className="logo-std">
+              <div className="logo-std">
                 {" "}
                 <img src={window.images.logo} />{" "}
-              </logo>
-              <logo className="logo-hov">
+              </div>
+              <div className="logo-hov">
                 {" "}
                 <img src={window.images.logoHover} />{" "}
-              </logo>
+              </div>
             </div>
           </Link>
 
-          {this.props.currentUser ? this.searchbar() : null}
+        {this.props.currentUser ? <Search /> : null}
         </div>
         {greeting}
       </div>
@@ -75,3 +76,4 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
+{/* {this.props.currentUser ? this.searchbar() : null} */}
