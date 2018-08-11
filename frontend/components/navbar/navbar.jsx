@@ -66,7 +66,7 @@ class Navbar extends React.Component {
             </div>
           </Link>
 
-          {this.searchbar()}
+          {this.props.currentUser ? this.searchbar() : null}
         </div>
         {greeting}
       </div>

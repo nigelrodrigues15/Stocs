@@ -19,9 +19,6 @@ const splash = () => {
         <img src={window.images.splash1} />
       </div>
       <div className="item-2-1">
-        <img src={window.images.splash2} />
-      </div>
-      <div className="item-2-2">
         <div>
           <h1>Invest for free.</h1>
           <br />
@@ -30,6 +27,9 @@ const splash = () => {
             not just the wealthy. 
           </p>
         </div>
+      </div>
+      <div className="item-2-2">
+        <img src={window.images.splash2} />
       </div>
       <div className="item-3-1">
         <div>
