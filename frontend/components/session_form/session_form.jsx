@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       username: "",
       password: "",
@@ -77,7 +76,7 @@ class SessionForm extends React.Component {
         />
         <br />
         <input
-          type="text"
+          type="email"
           value={this.state.email}
           onChange={this.update("email")}
           className="input"

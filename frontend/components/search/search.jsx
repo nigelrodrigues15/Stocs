@@ -5,37 +5,41 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 class Search extends React.Component {
   constructor(props) {
     super(props);
+    debugger
     this.state = { search: "" };
-// debugger
     this.handleInput = this.handleInput.bind(this);
   }
-
+  
   handleInput(event) {
     this.setState({ search: event.currentTarget.value });
   }
-
+  
+  componentDidMount() {
+    // this.props.fetchCompanies();
+  }
+  
   selectCompany(companyId) {
     if (companyId === undefined) {
       return null;
     }
-
+    
     return () => {
       this.props.history.push(`/company/${companyId}`);
       this.setState({ search: "" });
     };
   }
-
+  
   matches() {
     let matches = [];
-
+    
     if (this.state.search.length === 0) {
       return [];
     }
-
+    
     this.props.companies.forEach(company => {
       const companySubstr = company.name.slice(0, this.state.search.length);
       const symbolSubstr = company.symbol.slice(0, this.state.search.length);
-
+      
       if (
         companySubstr.toLowerCase() === this.state.search.toLowerCase() ||
         symbolSubstr.toLowerCase() === this.state.search.toLowerCase()
@@ -59,7 +63,6 @@ class Search extends React.Component {
         </li>
       );
     });
-
     return (
       <div className="search-bar">
         <input
