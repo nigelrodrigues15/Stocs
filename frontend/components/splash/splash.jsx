@@ -44,6 +44,18 @@ const splash = () => {
       <div className="item-3-2">
         <img src={window.images.splash3} />
       </div>
+      <div className="item-4-1">
+        <div>
+          <h1>Experiment.<br /> Now with zero risk.</h1>
+          <br />
+          <p>
+            Using virtual money, you can learn investing without having to worry about the risks.
+          </p>
+        </div>
+      </div>
+      <div className="item-2-2">
+        <img src={window.images.splash4} />
+      </div>
     </div>
   );
 };

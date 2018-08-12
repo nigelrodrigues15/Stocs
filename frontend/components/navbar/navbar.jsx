@@ -28,7 +28,11 @@ class Navbar extends React.Component {
   greeting() {
     return (
       <div className="nav-link">
-        <p className="logging">Home</p>
+        <p className="logging">
+        <Link className="logging" to="/">
+            Home
+          </Link>
+        </p>
         <p onClick={this.props.logout}>
           <Link className="logging" to="/">
             Log Out
