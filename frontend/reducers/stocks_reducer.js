@@ -16,7 +16,7 @@ const stocksReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_CHART:
-      return action.chart;
+      return merge(newState, action.chart);
 
     case RECEIVE_COMPANY_DETAILS:
       return action.details;
@@ -34,7 +34,7 @@ const stocksReducer = (state = {}, action) => {
       return action.peers;
 
     case RECEIVE_PRICE:
-      return action.price;
+      return merge(newState, {price: action.price});
 
     default:
       return state;

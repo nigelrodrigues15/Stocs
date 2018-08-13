@@ -9,7 +9,7 @@ const mapStateToProps = state => {
   return {
     currentUser: state.entities.users[state.session.id],
     company: state.companies,
-    sym: state.companies.id,
+    sym: state.companies.symbol,
     stocks: state.stocks
   };
 };

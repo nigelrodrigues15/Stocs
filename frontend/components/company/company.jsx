@@ -10,6 +10,9 @@ class Company extends React.Component {
     if (nextProps.match.params.companyId != this.props.company.id) {
       this.props.fetchCompany(nextProps.match.params.companyId);
     }
+    if (this.props.company.id !== undefined) {
+      // this.props.fetchPrice(this.props.sym)
+    };
   }
   componentDidMount() {
     this.props.fetchCompany(this.props.match.params.companyId);
@@ -17,9 +20,9 @@ class Company extends React.Component {
   
   render() {
     
-    if (!this.props.company) return null;
+    if (this.props.company.id === undefined) return null;
+    // if (this.props.stocks.price === undefined) return null;
     // debugger
-    {this.props.fetchPrice(this.props.sym);}
     return (
       <div className="company-detail">
         <h1>{this.props.company.name}</h1>
