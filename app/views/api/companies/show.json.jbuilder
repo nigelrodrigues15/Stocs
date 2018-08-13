@@ -1,0 +1,1 @@
+json.extract! @company, :id, :symbol, :lastsale, :name, :sector, :industry

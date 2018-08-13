@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Search from "../search/search";
+import SearchContainer from "../search/search_container";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -27,7 +29,11 @@ class Navbar extends React.Component {
   greeting() {
     return (
       <div className="nav-link">
-        <p className="logging">Home</p>
+        <p className="logging">
+          <Link className="logging" to="/">
+            Home
+          </Link>
+        </p>
         <p onClick={this.props.logout}>
           <Link className="logging" to="/">
             Log Out
@@ -55,18 +61,18 @@ class Navbar extends React.Component {
         <div className="nav-left">
           <Link to="/">
             <div className="logo">
-              <logo className="logo-std">
+              <div className="logo-std">
                 {" "}
                 <img src={window.images.logo} />{" "}
-              </logo>
-              <logo className="logo-hov">
+              </div>
+              <div className="logo-hov">
                 {" "}
                 <img src={window.images.logoHover} />{" "}
-              </logo>
+              </div>
             </div>
           </Link>
 
-          {this.searchbar()}
+          {this.props.currentUser ? <Search props={SearchContainer} /> : null}
         </div>
         {greeting}
       </div>

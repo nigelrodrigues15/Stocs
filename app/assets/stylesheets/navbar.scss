@@ -6,10 +6,9 @@
   margin: 0 auto;
   align-items: center;
   background-color: $background-dark;
-  // background-color: blue;
   position: fixed;
   width: 100vw;
-  height: 7vh;
+  height: 10vh;
   top: 0px;
 
   img {
@@ -53,7 +52,6 @@
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.25px;
-      margin: 0 auto;
       border-radius: 2px;
       display: inline-block;
       margin-left: 50px;
@@ -62,8 +60,6 @@
       color: $robin-green-light;
       padding: 5px;
       width: 40vw;
-      justify-content: center;
-      align-items: center;
     }
     ::placeholder {
       color: $placeholder;
@@ -82,14 +78,24 @@
     display: inline-block;
     padding-right: 50px;
     margin: 0 auto;
-    color: $robin-green;
+    color: $robin-white;
   }
 
   .logging {
-    color: $robin-green;
+    color: $robin-white;
     text-decoration: none;
   }
   .logging:hover {
     color: $robin-green-light;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    height: 15vh;
+
+    img {
+      height: 40px;
+    }
   }
 }

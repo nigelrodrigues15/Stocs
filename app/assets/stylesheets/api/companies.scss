@@ -1,0 +1,14 @@
+// Place all the styles related to the api/companies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.company-detail {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+    * {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: white;
+}
+}
