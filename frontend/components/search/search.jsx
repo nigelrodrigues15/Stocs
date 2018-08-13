@@ -14,7 +14,7 @@ class Search extends React.Component {
   }
   
   componentDidMount() {
-    debugger
+    // debugger
     // this.props.fetchCompanies();
   }
   

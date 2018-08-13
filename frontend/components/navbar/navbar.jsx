@@ -62,12 +62,10 @@ class Navbar extends React.Component {
           <Link to="/">
             <div className="logo">
               <div className="logo-std">
-                {" "}
-                <img src={window.images.logo} />{" "}
+                <img src={window.images.logo} />
               </div>
               <div className="logo-hov">
-                {" "}
-                <img src={window.images.logoHover} />{" "}
+                <img src={window.images.logoHover} />
               </div>
             </div>
           </Link>

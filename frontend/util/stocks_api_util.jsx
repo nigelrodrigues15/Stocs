@@ -19,7 +19,7 @@ export const getStock = sym => (
     })
   );
 
-  export const fetchCompany = sym => (
+  export const fetchCompanyDetails = sym => (
     $.ajax({
       method: 'GET',
       url: `https://api.iextrading.com/1.0/stock/${sym}/company`

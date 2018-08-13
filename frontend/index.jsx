@@ -6,7 +6,8 @@ import configureStore from "./store/store";
 //Temporary for testing
 import { login, logout, signup } from "./util/session_api_util";
 import { fetchCompanies, fetchCompany, updateLastSale } from "./util/company_api_util";
-import { getStock, currentStock } from "./util/stocks_api_util";
+import { getStock, currentStock, fetchChart, fetchCompanyDetails,
+  fetchStats, fetchLogo, fetchNews, fetchPeers, fetchPrice} from "./util/stocks_api_util";
 //End testing
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getStock = getStock;
   window.currentStock = currentStock;
   window.fetchChart = fetchChart;
-  window.fetchCompany = fetchCompany;
+  window.fetchCompanyDetails = fetchCompanyDetails;
   window.fetchStats = fetchStats;
   window.fetchLogo = fetchLogo;
   window.fetchNews = fetchNews;
