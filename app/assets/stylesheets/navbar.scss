@@ -8,7 +8,7 @@
   background-color: $background-dark;
   position: fixed;
   width: 100vw;
-  height: 10vh;
+  height: 80px;
   top: 0px;
 
   img {
@@ -44,6 +44,7 @@
   .search-bar {
     display: inline-flex;
     // padding-right: 50px;
+    // border: 1px solid white;
 
     margin: 0 auto;
     justify-content: center;
@@ -71,6 +72,11 @@
       border: 1px solid $robin-green;
       box-shadow: 0 0 3px $robin-green;
       outline: none;
+      .results-search:focus {
+        border-left: 1px solid $robin-green;
+        border-right: 1px solid $robin-green;
+        border-bottom: 1px solid $robin-green;
+      }
     }
   }
 
@@ -87,6 +93,43 @@
   }
   .logging:hover {
     color: $robin-green-light;
+  }
+}
+.results-search {
+  background-color: $background-dark;
+  position: absolute;
+  display: block;
+  top: 55px;
+  margin: 0;
+  margin-left: 25px;
+  padding: 0;
+  width: 40.9vw;
+
+  .result-div {
+    display: flex;
+    height: 27px;
+    // justify-content: space-between;
+    align-items: center;
+    * {
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.25px;
+      padding: 0px;
+    }
+    .result-symbol {
+      width: 100px;
+    }
+  }
+
+  .result-div:hover {
+    background-color: $robin-green;
+    cursor: pointer;
+    * {
+      background-color: $robin-green;
+      cursor: pointer;
+    }
   }
 }
 

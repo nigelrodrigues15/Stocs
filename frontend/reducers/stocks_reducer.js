@@ -34,7 +34,7 @@ const stocksReducer = (state = {}, action) => {
       return action.peers;
 
     case RECEIVE_PRICE:
-      debugger
+      // debugger
       return merge(newState, {price: action.price});
 
     default:

@@ -9,37 +9,37 @@ class Search extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     // debugger
   }
-  
+
   handleInput(event) {
     this.setState({ search: event.currentTarget.value });
   }
-  
+
   componentDidMount() {
     // debugger
     this.props.fetchCompanies();
   }
-  
+
   selectCompany(companyId) {
     if (companyId === undefined) {
       return null;
     }
-    
+
     return () => {
       this.props.history.push(`/company/${companyId}`);
       this.setState({ search: "" });
     };
   }
-  
+
   matches() {
     let matches = [];
     if (this.state.search.length === 0) {
       return [];
     }
-    
+
     this.props.companies.forEach(company => {
       const companySubstr = company.name.slice(0, this.state.search.length);
       const symbolSubstr = company.symbol.slice(0, this.state.search.length);
-      
+
       if (
         companySubstr.toLowerCase() === this.state.search.toLowerCase() ||
         symbolSubstr.toLowerCase() === this.state.search.toLowerCase()
@@ -57,11 +57,11 @@ class Search extends React.Component {
 
   render() {
     if (!this.props.companies) return null;
-
     const results = this.matches().map((result, i) => {
       return (
-        <li key={i} onClick={this.selectCompany(result.id)} id="company-search">
-          {result.symbol} {result.name}
+        <li key={i} onClick={this.selectCompany(result.id)} className="result-div">
+          <p className="result-symbol">{result.symbol}</p>
+          <p className="result-name">{result.name}</p>
         </li>
       );
     });
@@ -73,7 +73,7 @@ class Search extends React.Component {
           value={this.state.search}
           placeholder="Search"
         />
-
+        <br />
         <ul className="results-search">
           <ReactCSSTransitionGroup
             transitionName="auto"

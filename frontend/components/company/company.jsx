@@ -36,6 +36,7 @@ class Company extends React.Component {
         <h3>{this.props.company.sector}</h3>
         <h3>{this.props.company.industry}</h3>
         <h3>${this.props.company.lastsale}</h3>
+        <h2>${this.props.stocks.price}</h2>
       </div>
     );
   }
