@@ -5,7 +5,6 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = { search: "" };
     this.handleInput = this.handleInput.bind(this);
   }
@@ -15,6 +14,7 @@ class Search extends React.Component {
   }
   
   componentDidMount() {
+    debugger
     // this.props.fetchCompanies();
   }
   

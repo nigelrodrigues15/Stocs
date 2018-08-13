@@ -3,10 +3,11 @@ import { fetchCompanies, fetchCompany } from "../../actions/company_actions";
 import Company from "./company";
 
 const mapStateToProps = state => {
-    debugger
+    // debugger
   return {
     currentUser: state.entities.users[state.session.id],
-    company: state.companies
+    company: state.companies,
+    // company: state.companies.id
   };
 };
 

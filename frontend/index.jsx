@@ -40,6 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getStock = getStock;
   window.currentStock = currentStock;
+  window.fetchChart = fetchChart;
+  window.fetchCompany = fetchCompany;
+  window.fetchStats = fetchStats;
+  window.fetchLogo = fetchLogo;
+  window.fetchNews = fetchNews;
+  window.fetchPeers = fetchPeers;
+  window.fetchPrice = fetchPrice;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;

@@ -89,3 +89,13 @@
     color: $robin-green-light;
   }
 }
+
+@media (max-width: 800px) {
+  .navbar {
+    height: 15vh;
+
+    img {
+      height: 40px;
+    }
+  }
+}
