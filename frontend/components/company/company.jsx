@@ -4,21 +4,22 @@ import { Link, withRouter } from "react-router-dom";
 class Company extends React.Component {
   constructor(props) {
     super(props);
-    // debugger;
   }
-  //   componentWillReceiveProps(nextProps) {
-  //     if (
-  //       nextProps.match.params.companyId !== this.props.match.params.companyId
-  //     ) {
-  //       () => this.props.fetchCompany(nextProps.match.params.companyId);
-  //     }
-  //   }
+  componentWillReceiveProps(nextProps) {
+    // debugger;
+    if (nextProps.match.params.companyId != this.props.company.id) {
+      debugger
+      this.props.fetchCompany(nextProps.match.params.companyId);
+    }
+  }
   componentDidMount() {
+    // debugger
     this.props.fetchCompany(this.props.match.params.companyId);
   }
-
+  
   render() {
-    debugger;
+    
+    if (!this.props.company) return null;
     return (
       <div className="company-detail">
         <h1>{this.props.company.name}</h1>
