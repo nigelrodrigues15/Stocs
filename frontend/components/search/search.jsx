@@ -7,6 +7,7 @@ class Search extends React.Component {
     super(props);
     this.state = { search: "" };
     this.handleInput = this.handleInput.bind(this);
+    // debugger
   }
   
   handleInput(event) {
@@ -15,7 +16,7 @@ class Search extends React.Component {
   
   componentDidMount() {
     // debugger
-    // this.props.fetchCompanies();
+    this.props.fetchCompanies();
   }
   
   selectCompany(companyId) {
@@ -31,7 +32,6 @@ class Search extends React.Component {
   
   matches() {
     let matches = [];
-    
     if (this.state.search.length === 0) {
       return [];
     }
@@ -56,6 +56,8 @@ class Search extends React.Component {
   }
 
   render() {
+    if (!this.props.companies) return null;
+
     const results = this.matches().map((result, i) => {
       return (
         <li key={i} onClick={this.selectCompany(result.id)} id="company-search">

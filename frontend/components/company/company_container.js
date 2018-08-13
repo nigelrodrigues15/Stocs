@@ -4,12 +4,11 @@ import { fetchChart, fetchCompanyDetails, fetchStats,
   fetchLogo, fetchNews, fetchPeers, fetchPrice } from "../../actions/stock_actions";
 import Company from "./company";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownprops) => {
     // debugger
   return {
     currentUser: state.entities.users[state.session.id],
-    company: state.companies,
-    sym: state.companies.symbol,
+    company: state.companies[ownprops.match.params.companyId],
     stocks: state.stocks
   };
 };

@@ -8,12 +8,12 @@ import {
   RECEIVE_NEWS,
   RECEIVE_PEERS,
   RECEIVE_PRICE
-} from "../actions/company_actions";
+} from "../actions/stock_actions";
 
 const stocksReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-
+// debugger
   switch (action.type) {
     case RECEIVE_CHART:
       return merge(newState, action.chart);
@@ -34,6 +34,7 @@ const stocksReducer = (state = {}, action) => {
       return action.peers;
 
     case RECEIVE_PRICE:
+      debugger
       return merge(newState, {price: action.price});
 
     default:

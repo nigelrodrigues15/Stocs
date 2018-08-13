@@ -5,8 +5,8 @@ import Search from './search';
 const mapStateToProps = state => {
   // debugger
   return {
-    // currentUser: state.entities.users[state.session.id],
-    // companies: Object.values(state.companies)
+    currentUser: state.entities.users[state.session.id],
+    companies: Object.values(state.companies)
   };
 };
 

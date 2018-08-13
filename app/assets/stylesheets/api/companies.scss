@@ -3,8 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .company-detail {
     display: flex;
-    margin-top: 500px;
+    margin-top: 30vh;
     flex-direction: column;
+
+    img {
+        width: 50vw;
+    }
     * {
     justify-content: center;
     align-items: center;
