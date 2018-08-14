@@ -4,6 +4,7 @@ import sessionReducer from './session_reducer';
 import errorsReducer from './errors_reducer';
 import companyReducer from './company_reducer';
 import stocksReducer from './stocks_reducer';
+import watchlistReducer from './watchlist_reducer';
 
 const rootReducer = combineReducers({
 
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     session: sessionReducer,
     errors: errorsReducer,
     companies: companyReducer,
-    stocks: stocksReducer
+    stocks: stocksReducer,
+    watchlist: watchlistReducer
 });
 
 export default rootReducer;

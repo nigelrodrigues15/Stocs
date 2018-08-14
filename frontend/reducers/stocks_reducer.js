@@ -13,29 +13,28 @@ import {
 const stocksReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-// debugger
+  // debugger
   switch (action.type) {
     case RECEIVE_CHART:
-      return merge(newState, action.chart);
+      return merge(newState, { chart: action.chart });
 
     case RECEIVE_COMPANY_DETAILS:
-      return action.details;
+      return merge(newState, { details: action.details });
 
     case RECEIVE_STATS:
-      return action.stats;
+      return merge(newState, { stats: action.stats });
 
     case RECEIVE_LOGO:
-      return action.logo;
+      return merge(logo, { price: action.logo });
 
     case RECEIVE_NEWS:
-      return action.news;
+      return merge(newState, { news: action.news });
 
     case RECEIVE_PEERS:
-      return action.peers;
+      return merge(newState, { peers: action.peers });
 
     case RECEIVE_PRICE:
-      // debugger
-      return merge(newState, {price: action.price});
+      return merge(newState, { price: action.price });
 
     default:
       return state;

@@ -19,5 +19,3 @@ const companyReducer = (state = {}, action) => {
 };
 
 export default companyReducer;
-
-// [action.company.id]: action.company

@@ -1,6 +1,6 @@
 import * as CompanyAPIUtil from "../util/company_api_util";
 import * as StockAPIUtil from "../util/stocks_api_util";
-import { receivePrice } from "../actions/stock_actions";
+import { receivePrice } from "./stock_actions";
 
 export const RECEIVE_COMPANIES = "RECEIVE_COMPANIES";
 export const RECEIVE_COMPANY = "RECEIVE_COMPANY";
@@ -12,10 +12,9 @@ export const fetchCompanies = () => dispatch =>
 
 export const fetchCompany = companyId => dispatch =>
   CompanyAPIUtil.fetchCompany(companyId).then(company =>
-    dispatch(receiveCompany(company))).then( (c) => (
-        StockAPIUtil.fetchPrice(c.company.symbol).then(price => dispatch(receivePrice(price)))
-    )
-  );
+    dispatch(receiveCompany(company))).then( 
+      action => (StockAPIUtil.fetchPrice(action.company.symbol).then(
+        price => dispatch(receivePrice(price)))));
 
 export const updateLastSale = company => dispatch =>
   CompanyAPIUtil.updateLastSale(company).then(company =>

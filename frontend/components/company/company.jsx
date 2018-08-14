@@ -4,27 +4,25 @@ import { Link, withRouter } from "react-router-dom";
 class Company extends React.Component {
   constructor(props) {
     super(props);
+    debugger;
   }
-  // componentWillReceiveProps(nextProps) {
-  //   debugger;
-  //   if (nextProps.match.params.companyId != this.props.company.id) {
-  //     this.props.fetchCompany(nextProps.match.params.companyId);
-  //   }
-  //   if (this.props.company.id !== undefined) {
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.company !== undefined) {
+    // if (nextProps.match.params.companyId != this.props.company.id) {
+      // this.props.fetchCompany(nextProps.match.params.companyId);
+      // this.props.fetchCompanyDetails(this.props.company.symbol);
+    // }
+    }
+  }
   componentDidMount() {
     this.props.fetchCompany(this.props.match.params.companyId);
-    // if (this.props.stocks.price === undefined) {
-      // this.props.fetchPrice(this.props.company.symbol);
-    // }
   }
 
   render() {
     console.log(this.props);
     if (this.props.company === undefined) return null;
-    // if (this.props.stocks.price === undefined) return null;
-    // debugger
+    // if (this.props.stocks.details === undefined) return null;
+    debugger;
 
     // if (this.props.stocks.price === undefined) return null;
     return (
@@ -37,6 +35,8 @@ class Company extends React.Component {
         <h3>{this.props.company.industry}</h3>
         <h3>${this.props.company.lastsale}</h3>
         <h2>${this.props.stocks.price}</h2>
+        <br />
+
       </div>
     );
   }
