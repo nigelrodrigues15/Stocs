@@ -16,10 +16,11 @@ class Company extends React.Component {
   }
   componentDidMount() {
     this.props.fetchCompany(this.props.match.params.companyId);
+    this.props.showWatchlist();
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.company === undefined) return null;
     // if (this.props.stocks.details === undefined) return null;
     debugger;
