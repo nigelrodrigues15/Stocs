@@ -1,12 +1,12 @@
 class Api::WatchlistsController < ApplicationController
   
     def index
-        @watchlists = WatchList.find_by(user_id: current_user.id)
+        @watchlists = Watchlist.find_by(user_id: current_user.id)
         render 'api/watchlists/show'
     end
   
     def create
-    @watchlist = WatchList.new(user_id: current_user.id, company_id: params[:id])
+    @watchlist = Watchlist.new(user_id: current_user.id, company_id: params[:id])
 
     if @watchlist.save
       @company = Company.find(@watchlist.company_id)
@@ -17,7 +17,7 @@ class Api::WatchlistsController < ApplicationController
   end
 
   def destroy
-    @watchlist = WatchList.find_by(user_id: current_user.id, company_id: params[:id])
+    @watchlist = Watchlist.find_by(user_id: current_user.id, company_id: params[:id])
     @company = Company.find(watchlist.company_id)
     @watchlist.destroy
     render 'api/companies/show'
