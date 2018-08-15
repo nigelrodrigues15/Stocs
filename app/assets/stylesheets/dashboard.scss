@@ -1,14 +1,51 @@
-.dashboard-watchlists {
+@import "constants";
+
+.dashboard {
+  display: grid;
+  margin-top: 80px;
+  color: $robin-white;
+  background-color: $background-dark;
+  grid-template-columns:
+    minmax(100px, 1fr) minmax(250px, 3fr)
+    minmax(100px, 1.5fr) minmax(100px, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+
+  .dashboard-watchlists {
     display: flex;
-    // border: 1px solid white;
-    // background-color: green;
-    height: 100vh;
-    margin-top: 70px;
-    *{
-        color: white;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        list-style: none;
+    // height: 100vh;
+    color: $placeholder;
+    justify-content: center;
+    * {
+      text-decoration: none;
+      list-style: none;
+      padding: 0;
+      justify-content: center;
     }
+    ul {
+      border: 1px solid $placeholder;
+      //   height: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      li {
+        display: block;
+        padding: 10px 50px;
+        text-align: center;
+      }
+
+      li:hover {
+        cursor: pointer;
+        background-color: $robin-green;
+        color: white;
+      }
+    }
+  }
+  .dashboard-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 45vw;
+    }
+  }
 }

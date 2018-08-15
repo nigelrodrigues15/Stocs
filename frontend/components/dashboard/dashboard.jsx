@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
           onClick={this.selectCompany(watchlist.company_id)}
           className="watchlist-company"
         >
-          <p>{this.props.companies[watchlist.company_id].symbol}</p>
+          {this.props.companies[watchlist.company_id].symbol}
         </li>
       );
     });
@@ -43,9 +43,15 @@ class Dashboard extends React.Component {
     // if (this.props.company === undefined) return null;
     return (
       <div className="dashboard">
+      <div></div>
+      <div className="dashboard-home"><img src={window.images.staticGraph} alt="" /></div>
         <div className="dashboard-watchlists">
-          <ul>{this.watchlists()}</ul>
+          <ul>
+            {/* <li className="watchlist-title">Watchlist Stocks</li> */}
+          {this.watchlists()}
+          </ul>
         </div>
+      <div></div>
       </div>
     );
   }
