@@ -30,7 +30,7 @@ class Navbar extends React.Component {
     return (
       <div className="nav-link">
         <p className="logging">
-          <Link className="logging" to="/">
+          <Link className="logging" to="/dashboard">
             Home
           </Link>
         </p>

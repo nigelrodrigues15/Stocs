@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import company from "../company/company";
 
-class Company extends React.Component {
+class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.watchlists = this.watchlists.bind(this);
@@ -23,7 +22,10 @@ class Company extends React.Component {
   }
 
   watchlists() {
-    let result = Object.values(this.props.watchlists).map((watchlist, i) => {
+    if (this.props.watchlists.length === 0) return null;
+    if (Object.keys(this.props.companies).length === 0) return null;
+    // debugger;
+    let result = this.props.watchlists.map((watchlist, i) => {
       return (
         <li
           key={i}
@@ -38,15 +40,15 @@ class Company extends React.Component {
   }
 
   render() {
-    if (this.props.company === undefined) return null;
+    // if (this.props.company === undefined) return null;
     return (
       <div className="dashboard">
         <div className="dashboard-watchlists">
-          <ul>{this.watchlists}</ul>
+          <ul>{this.watchlists()}</ul>
         </div>
       </div>
     );
   }
 }
 
-export default withRouter(Company);
+export default withRouter(Dashboard);

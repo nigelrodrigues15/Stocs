@@ -63,9 +63,9 @@ class Company extends React.Component {
   }
 
   render() {
-   debugger
+  //  debugger
     if (this.props.company === undefined) return null;
-    if (Object.keys(this.props.stocks).length == 0) return null;
+    if (Object.keys(this.props.stocks).length < 3) return null;
     if (this.props.watchlist === undefined) {
       this.watchlistButton = "Add to Watchlist";
       this.color = "green";
@@ -74,6 +74,7 @@ class Company extends React.Component {
       this.color = "red";
     }
     // if (this.props.stocks.price === undefined) return null;
+    // debugger
     return (
       <div className="company-detail">
         <img src={window.images.staticGraph} alt="" />

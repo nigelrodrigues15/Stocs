@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownprops) => {
     currentUser: state.entities.users[state.session.id],
     companies: state.companies,
     stocks: state.stocks,
-    watchlists: state.watchlists
+    watchlists: Object.values(state.watchlists)
   };
 };
 
