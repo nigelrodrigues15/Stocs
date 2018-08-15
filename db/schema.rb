@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180813160254) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_watchlists_on_company_id"
-    t.index ["user_id"], name: "index_watchlists_on_user_id"
+    t.index ["user_id", "company_id"], name: "index_watchlists_on_user_id_and_company_id", unique: true
   end
 
 end

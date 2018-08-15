@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
     errors: errorsReducer,
     companies: companyReducer,
     stocks: stocksReducer,
-    watchlist: watchlistReducer
+    watchlists: watchlistReducer
 });
 
 export default rootReducer;

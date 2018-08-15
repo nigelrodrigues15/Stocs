@@ -59,7 +59,7 @@ class Search extends React.Component {
     if (!this.props.companies) return null;
     const results = this.matches().map((result, i) => {
       return (
-        <li key={i} onClick={this.selectCompany(result.id)} className="result-div">
+        <li key={i} onClick={this.selectCompany(result.id)} className="result-div"> 
           <p className="result-symbol">{result.symbol}</p>
           <p className="result-name">{result.name}</p>
         </li>

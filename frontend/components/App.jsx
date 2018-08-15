@@ -5,6 +5,7 @@ import LoginFormContainer from "./session_form/login_form_container";
 import SearchContainer from "./search/search_container";
 import NavbarContainer from "./navbar/navbar_container";
 import CompanyContainer from "./company/company_container";
+import DashboardContainer from "./dashboard/dashboard_container";
 import Splash from "./splash/splash";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -15,7 +16,8 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/company/:companyId" component={CompanyContainer} />
+      <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
+      <ProtectedRoute exact path="/company/:companyId" component={CompanyContainer} />
       
       <AuthRoute exact path="/" component={Splash} />
     </Switch>

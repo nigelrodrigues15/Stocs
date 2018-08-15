@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
     event.preventDefault();
 
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push("/"));
+    this.props.processForm(user).then(() => this.props.history.push("/dashboard"));
   }
 
   renderErrors() {
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
 
   demoLogging() {
     this.setState(this.demoUser);
-    this.props.processForm(this.demoUser).then(() => this.props.history.push("/"));
+    this.props.processForm(this.demoUser).then(() => this.props.history.push("/dashboard"));
   }
 
   signupForm() {

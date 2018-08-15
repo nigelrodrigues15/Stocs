@@ -12,9 +12,7 @@ export const fetchCompanies = () => dispatch =>
 
 export const fetchCompany = companyId => dispatch =>
   CompanyAPIUtil.fetchCompany(companyId).then(company =>
-    dispatch(receiveCompany(company))).then( 
-      action => (StockAPIUtil.fetchPrice(action.company.symbol).then(
-        price => dispatch(receivePrice(price)))));
+    dispatch(receiveCompany(company)));
 
 export const updateLastSale = company => dispatch =>
   CompanyAPIUtil.updateLastSale(company).then(company =>
@@ -30,3 +28,7 @@ export const receiveCompany = company => ({
   type: RECEIVE_COMPANY,
   company
 });
+
+// .then( 
+//   action => (StockAPIUtil.fetchPrice(action.company.symbol).then(
+//     price => dispatch(receivePrice(price)))))

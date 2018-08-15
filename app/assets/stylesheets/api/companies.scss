@@ -1,18 +1,50 @@
 // Place all the styles related to the api/companies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.company-detail {
-    display: flex;
-    margin-top: 30vh;
-    flex-direction: column;
+@import "constants";
 
-    img {
-        width: 50vw;
-    }
-    * {
+.company-detail {
+  display: flex;
+  margin-top: 30vh;
+  flex-direction: column;
+
+  img {
+    width: 50vw;
+  }
+  * {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     color: white;
+  }
 }
+
+.watchlist-button {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  width: 200px;
 }
+.watchlist-button:focus {
+    outline: none;
+}
+.green {
+  border: 1px solid $robin-green;
+  color: $robin-green;
+}
+.green:hover {
+    box-shadow: 0 0 0.1px $robin-green;
+    border: 1px solid $robin-green-light;
+    color: $robin-green-light;
+}
+.red {
+  border: 1px solid $robin-red;
+  color: $robin-red;
+}
+.red:hover {
+    box-shadow: 0 0 0.1px $robin-red;
+    border: 1px solid $robin-red-light;
+    color: $robin-red-light;
+}
+

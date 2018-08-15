@@ -3,15 +3,15 @@ import { fetchCompanies, fetchCompany } from "../../actions/company_actions";
 import { createWatchlist, showWatchlist, removeWatchlist } from "../../actions/watchlist_actions";
 import { fetchChart, fetchCompanyDetails, fetchStats,
   fetchLogo, fetchNews, fetchPeers, fetchPrice } from "../../actions/stock_actions";
-import Company from "./company";
+import Dashboard from "./dashboard";
 
 const mapStateToProps = (state, ownprops) => {
-  debugger
+  // debugger
   return {
     currentUser: state.entities.users[state.session.id],
-    company: state.companies[ownprops.match.params.companyId],
+    companies: state.companies,
     stocks: state.stocks,
-    watchlist: state.watchlists[ownprops.match.params.companyId]
+    watchlists: state.watchlists
   };
 };
 
@@ -35,4 +35,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Company);
+)(Dashboard);

@@ -11,7 +11,7 @@ const companyReducer = (state = {}, action) => {
       return action.companies;
 
     case RECEIVE_COMPANY:
-      return action.company;
+      return merge(newState,{[action.company.id]: action.company});
 
     default:
       return state;

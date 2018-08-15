@@ -1,8 +1,8 @@
-export const createWatchlist = (watchlistId) => (
+export const createWatchlist = (companyId) => (
     $.ajax({
       method: "POST",
       url: "/api/watchlists",
-      data: { watchlistId }
+      data: { companyId }
     })
   )
 
@@ -13,10 +13,10 @@ export const showWatchlist = () => (
     })
   )
   
-  export const removeWatchlist = watchlistId => (
+  export const removeWatchlist = companyId => (
     $.ajax({
       method: "DELETE",
-      url: `/api/watchlists/${watchlistId}`
+      url: `/api/watchlists/${companyId}`
     })
   )
 

@@ -59,7 +59,7 @@ class Navbar extends React.Component {
     return (
       <div className="navbar">
         <div className="nav-left">
-          <Link to="/">
+          <Link to={this.props.currentUser ? "/dashboard" : "/"}>
             <div className="logo">
               <div className="logo-std">
                 <img src={window.images.logo} />
