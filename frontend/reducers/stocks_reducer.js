@@ -13,7 +13,6 @@ import {
 const stocksReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-  // debugger
   switch (action.type) {
     case RECEIVE_CHART:
       return merge(newState, { chart: action.chart });

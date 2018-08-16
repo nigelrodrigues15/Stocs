@@ -15,7 +15,7 @@ export const getStock = sym => (
   export const fetchChart = (sym,chartRange) => (
     $.ajax({
       method: 'GET',
-      url: `https://api.iextrading.com/1.0/stock/${sym}/chart/${chartRange}?filter=date,label,high,marketAverage`
+      url: `https://api.iextrading.com/1.0/stock/${sym}/chart/${chartRange}?filter=date,label,marketAverage`
     })
   );
 
@@ -29,7 +29,7 @@ export const getStock = sym => (
   export const fetchStats = sym => (
     $.ajax({
       method: 'GET',
-      url: `https://api.iextrading.com/1.0/stock/${sym}/stats?filter=marketcap,dividendYield,profitMargin,returnOnEquity`
+      url: `https://api.iextrading.com/1.0/stock/${sym}/stats?filter=marketcap,dividendYield,profitMargin,returnOnEquity,year5ChangePercent,year2ChangePercent,year1ChangePercent,month6ChangePercent,month3ChangePercent,month1ChangePercent,day5ChangePercent`
     })
   );
 

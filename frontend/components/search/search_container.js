@@ -3,7 +3,6 @@ import { fetchCompanies, fetchCompany } from "../../actions/company_actions";
 import Search from './search';
 
 const mapStateToProps = state => {
-  // debugger
   return {
     currentUser: state.entities.users[state.session.id],
     companies: Object.values(state.companies)
@@ -11,7 +10,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // debugger
   return {
   fetchCompanies: () => dispatch(fetchCompanies()),
   fetchCompany: companyId => dispatch(fetchCompany(companyId))

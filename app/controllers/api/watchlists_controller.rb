@@ -5,7 +5,6 @@ class Api::WatchlistsController < ApplicationController
   end
 
   def create
-    # debugger
     @watchlist = Watchlist.new(user_id: current_user.id, company_id: params[:companyId])
 
     if @watchlist.save
@@ -18,7 +17,6 @@ class Api::WatchlistsController < ApplicationController
 end
 
   def destroy
-    # debugger
     @watchlist = Watchlist.find_by(user_id: current_user.id, company_id: params[:id])
     @company = Company.find(@watchlist.company_id)
     @watchlist.destroy

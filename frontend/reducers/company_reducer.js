@@ -4,7 +4,6 @@ import { RECEIVE_COMPANIES, RECEIVE_COMPANY } from "../actions/company_actions";
 const companyReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-//   debugger
   switch (action.type) {
 
     case RECEIVE_COMPANIES:

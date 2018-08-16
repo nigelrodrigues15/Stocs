@@ -6,7 +6,6 @@ import { fetchChart, fetchCompanyDetails, fetchStats,
 import Company from "./company";
 
 const mapStateToProps = (state, ownprops) => {
-  // debugger
   return {
     currentUser: state.entities.users[state.session.id],
     company: state.companies[ownprops.match.params.companyId],

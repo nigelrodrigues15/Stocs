@@ -4,7 +4,6 @@ import { RECEIVE_WATCHLIST, REMOVE_WATCHLIST, RECEIVE_WATCHLISTS } from "../acti
 const watchlistReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-//   debugger
   switch (action.type) {
 
     case RECEIVE_WATCHLIST:

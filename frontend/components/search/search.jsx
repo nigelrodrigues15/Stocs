@@ -7,7 +7,6 @@ class Search extends React.Component {
     super(props);
     this.state = { search: "" };
     this.handleInput = this.handleInput.bind(this);
-    // debugger
   }
 
   handleInput(event) {
@@ -15,19 +14,18 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     console.log("Search mounting");
-    
+
     this.props.fetchCompanies();
   }
 
-  selectCompany(companyId) {
+  selectCompany(companyId, companySymbol) {
     if (companyId === undefined) {
       return null;
     }
 
     return () => {
-      this.props.history.push(`/company/${companyId}`);
+      this.props.history.push(`/company/${companyId}/${companySymbol}`);
       this.setState({ search: "" });
     };
   }
@@ -60,8 +58,19 @@ class Search extends React.Component {
   render() {
     if (!this.props.companies) return null;
     const results = this.matches().map((result, i) => {
+      if (result === "No results available for your search") {
+        return (
+          <li className="result-div">
+            <p className="result-none">{result}</p>
+          </li>
+        );
+      }
       return (
-        <li key={i} onClick={this.selectCompany(result.id)} className="result-div"> 
+        <li
+          key={i}
+          onClick={this.selectCompany(result.id, result.symbol)}
+          className="result-div"
+        >
           <p className="result-symbol">{result.symbol}</p>
           <p className="result-name">{result.name}</p>
         </li>
@@ -77,13 +86,13 @@ class Search extends React.Component {
         />
         <br />
         <ul className="results-search">
-          <ReactCSSTransitionGroup
+          {/* <ReactCSSTransitionGroup
             transitionName="auto"
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}
-          >
+          > */}
             {results}
-          </ReactCSSTransitionGroup>
+          {/* </ReactCSSTransitionGroup> */}
         </ul>
       </div>
     );

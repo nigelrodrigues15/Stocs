@@ -11,25 +11,24 @@ class Dashboard extends React.Component {
     this.props.showWatchlist();
   }
 
-  selectCompany(companyId) {
+  selectCompany(companyId, companySymbol) {
     if (companyId === undefined) {
       return null;
     }
 
     return () => {
-      this.props.history.push(`/company/${companyId}`);
+      this.props.history.push(`/company/${companyId}/${companySymbol}`);
     };
   }
 
   watchlists() {
     if (this.props.watchlists.length === 0) return null;
     if (Object.keys(this.props.companies).length === 0) return null;
-    // debugger;
     let result = this.props.watchlists.map((watchlist, i) => {
       return (
         <li
           key={i}
-          onClick={this.selectCompany(watchlist.company_id)}
+          onClick={this.selectCompany(watchlist.company_id, this.props.companies[watchlist.company_id].symbol)}
           className="watchlist-company"
         >
           {this.props.companies[watchlist.company_id].symbol}

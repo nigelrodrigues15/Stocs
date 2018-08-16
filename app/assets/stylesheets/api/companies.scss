@@ -4,9 +4,13 @@
 @import "constants";
 
 .company-detail {
-  display: flex;
-  margin-top: 30vh;
-  flex-direction: column;
+  display: grid;
+  margin-top: 15vh;
+  // flex-direction: column;
+  grid-template-columns: minmax(100px, 1fr) minmax(250px, 3fr) minmax(
+      100px,
+      1fr
+    );
 
   img {
     width: 50vw;
@@ -14,6 +18,7 @@
   * {
     justify-content: center;
     align-items: center;
+    text-align: left;
     margin: 0 auto;
     color: white;
   }
@@ -27,24 +32,45 @@
   width: 200px;
 }
 .watchlist-button:focus {
-    outline: none;
+  outline: none;
 }
 .green {
   border: 1px solid $robin-green;
   color: $robin-green;
 }
 .green:hover {
-    box-shadow: 0 0 0.1px $robin-green;
-    border: 1px solid $robin-green-light;
-    color: $robin-green-light;
+  box-shadow: 0 0 0.1px $robin-green;
+  border: 1px solid $robin-green-light;
+  color: $robin-green-light;
 }
 .red {
   border: 1px solid $robin-red;
   color: $robin-red;
 }
 .red:hover {
-    box-shadow: 0 0 0.1px $robin-red;
-    border: 1px solid $robin-red-light;
-    color: $robin-red-light;
+  box-shadow: 0 0 0.1px $robin-red;
+  border: 1px solid $robin-red-light;
+  color: $robin-red-light;
 }
-
+.chart {
+  display: block;
+  width: 65vw;
+  * {
+    display: block;
+    padding: 0;
+    left: -30px;
+  }
+}
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3vh;
+  .company-display {
+    justify-content: left;
+    margin: 0;
+  }
+  .company-watchlist {
+    justify-content: right;
+    margin: 0;
+  }
+}
