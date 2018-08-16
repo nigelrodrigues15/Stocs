@@ -65,12 +65,14 @@ class Company extends React.Component {
         <div>
           <h1>About</h1>
           <p>{this.props.stocks.details.description}</p>
+          <div className="Add>
           <h3>CEO</h3>
           <p>{this.props.stocks.details.CEO}</p>
           <h3>Sector</h3>
           <p>{this.props.stocks.details.sector}</p>
           <h3>Website</h3>
           <p>{this.props.stocks.details.website}</p>
+          </div>
         </div>
         <div />
         <div />

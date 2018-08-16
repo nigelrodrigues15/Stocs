@@ -29,7 +29,7 @@
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.25px;
-  width: 200px;
+  width: 185px;
 }
 .watchlist-button:focus {
   outline: none;
@@ -73,4 +73,7 @@
     justify-content: right;
     margin: 0;
   }
+}
+#ogPrice {
+  display: none;
 }

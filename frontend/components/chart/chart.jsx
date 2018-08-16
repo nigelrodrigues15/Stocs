@@ -8,6 +8,8 @@ import {
   YAxis,
   ResponsiveContainer
 } from "recharts";
+import CustomTooltip from './custom_tooltip';
+import Odometer from "react-odometerjs";
 
 class Chart extends React.Component {
   constructor(props) {
@@ -76,7 +78,14 @@ class Chart extends React.Component {
           <Line type="monotone" dataKey="y" stroke={this.color()} dot={false} />
           <XAxis dataKey="x" stroke="none" />
           <YAxis domain={["auto", "auto"]} stroke="none" />
-          <Tooltip />
+          <Tooltip
+              wrapperStyle={{background: 'transparent', border: 'none', color: 'lightgray'}}
+              cursor={{strokeWidth: 1}}
+              offset={-90}
+              isAnimationActive={false}
+              position={{x: 0, y: 0 }}
+              content={<CustomTooltip />}
+            />
         </LineChart>
       </ResponsiveContainer>
     );
@@ -90,20 +99,17 @@ class Chart extends React.Component {
         this.watchlistButton = "Remove from Watchlist";
         this.colorClass = "red";
       }
-    return (
-      <div className="chart-detail">
+    return <div className="chart-detail">
         <div className="company-info">
           <div className="company-display">
             <h2>{this.props.stocks.details.companyName}</h2>
-            <h2>${this.props.stocks.price}</h2>
+            <h2 className="odometer" id="price">
+              ${this.props.stocks.price.toFixed(2)}
+            </h2>
+            <h3 id="ogPrice">${this.props.stocks.price.toFixed(2)}</h3>
           </div>
           <div className="company-watchlist">
-            <input
-              className={`watchlist-button ${this.colorClass}`}
-              type="button"
-              onClick={this.toggleWatchlist}
-              value={this.watchlistButton}
-            />
+            <input className={`watchlist-button ${this.colorClass}`} type="button" onClick={this.toggleWatchlist} value={this.watchlistButton} />
           </div>
         </div>
         <br />
@@ -111,8 +117,7 @@ class Chart extends React.Component {
         <div className="chart">{this.chart()}</div>
         <br />
         <br />
-      </div>
-    );
+      </div>;
   }
 }
 
