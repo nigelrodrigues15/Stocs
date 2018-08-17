@@ -8,7 +8,7 @@ With it, users can freely browse and track their favorite companies to learn abo
 
 A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A demo user can be found in the log in section if you'd like to preview the site without creating an account.
 
-![Splash Page](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/SplashPage.png "Splash Page")
+![Demo Login](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/DemoLogin.png "DemoLogin")
 
 ## Features
 * Secure user authentication using BCrypt
