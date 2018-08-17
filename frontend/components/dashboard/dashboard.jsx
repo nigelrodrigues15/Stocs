@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
       return (
         <div key={i} className="articles">
           <div className="image-container">
-            <i class="far fa-newspaper" />
+            <i className="far fa-newspaper" />
           </div>
           <a key={i} href={article.url}>
             <li>
@@ -65,21 +65,13 @@ class Dashboard extends React.Component {
     return result;
   }
   watchlists() {
+    debugger
     if (this.props.watchlists.length === 0) return null;
     if (Object.keys(this.props.companies).length === 0) return null;
     let result = this.props.watchlists.map((watchlist, i) => {
-      return (
-        <li
-          key={i}
-          onClick={this.selectCompany(
-            watchlist.company_id,
-            this.props.companies[watchlist.company_id].symbol
-          )}
-          className="watchlist-company"
-        >
+      return <li key={i} onClick={this.selectCompany(watchlist.company_id, this.props.companies[watchlist.company_id].symbol)} className="watchlist-company">
           {this.props.companies[watchlist.company_id].symbol}
-        </li>
-      );
+        </li>;
     });
     return result;
   }
@@ -103,7 +95,7 @@ class Dashboard extends React.Component {
         </div>
         <div className="dashboard-watchlists">
           <ul>
-            {/* <li className="watchlist-title">Watchlist Stocks</li> */}
+            <li className="watchlist-title">WATCHLISTS:</li>
             {this.watchlists()}
           </ul>
         </div>

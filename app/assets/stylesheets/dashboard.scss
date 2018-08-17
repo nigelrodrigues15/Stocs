@@ -6,9 +6,9 @@
   color: $robin-white;
   background-color: $background-dark;
   grid-template-columns:
-    minmax(100px, 1fr) minmax(250px, 3fr)
-    minmax(100px, 1.5fr) minmax(100px, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+    minmax(100px, 0.9fr) minmax(250px, 3fr)
+    minmax(100px, 2fr) minmax(100px, 1fr);
+  grid-template-rows: repeat(1, 0.5fr);
 
   .dashboard-watchlists {
     display: flex;
@@ -26,16 +26,25 @@
       //   height: 0;
       padding-top: 20px;
       padding-bottom: 20px;
+      margin-left: 60px;
+      box-shadow: 0px 0px 20px black;
 
       li {
         display: block;
-        padding: 10px 50px;
+        padding: 10px 60px;
         text-align: center;
       }
-
+      .watchlist-title {
+        color: $robin-green;
+      }
+      .watchlist-title:hover {
+        background-color: $background-dark;
+        color: $robin-green;
+        cursor: default;
+      }
       li:hover {
         cursor: pointer;
-        background-color: $robin-green;
+        background-color: $dark-hover;
         color: white;
       }
     }
@@ -94,7 +103,7 @@
     h2 {
       text-decoration: none;
       color: white;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.25px;
       margin: 0px;
