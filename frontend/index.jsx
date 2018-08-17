@@ -18,6 +18,7 @@ import {
   fetchPrice,
   fetchChange
 } from "./util/stocks_api_util";
+import merge from "lodash/merge";
 //End testing
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -44,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.login = login;
   window.logout = logout;
   window.signup = signup;
+
+  window.merge = merge;
 
   window.fetchCompanies = fetchCompanies;
   window.fetchCompany = fetchCompany;

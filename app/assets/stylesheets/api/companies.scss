@@ -159,17 +159,29 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  #range-button {
+  #button-green, #button-red {
     padding-right: 20px;
     text-decoration: none;
     border: none;
     cursor: pointer;
     font-size: 10pt;
   }
-  #range-button:hover {
+
+  .current-red {
+    color: $robin-red;
+  }
+  .current-green {
     color: $robin-green;
   }
-  .current-range {
+  .current-green,
+  #button-green:hover {
     color: $robin-green;
+  }
+  .current-red,
+  #button-red:hover {
+    color: $robin-red;
+  }
+  #button-green:focus, #button-red:focus {
+    outline: none;
   }
 }

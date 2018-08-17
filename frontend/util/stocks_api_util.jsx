@@ -15,7 +15,7 @@ export const getStock = sym => (
   export const fetchChart = (sym,chartRange) => (
     $.ajax({
       method: 'GET',
-      url: `https://api.iextrading.com/1.0/stock/${sym}/chart/${chartRange}?filter=date,label,marketAverage`
+      url: `https://api.iextrading.com/1.0/stock/${sym}/chart/${chartRange}?filter=date,label,high`
     })
   );
 

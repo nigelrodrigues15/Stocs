@@ -21,6 +21,7 @@ class Chart extends React.Component {
     this.toggleWatchlist = this.toggleWatchlist.bind(this);
     this.ajaxcalls = this.ajaxcalls.bind(this);
     this.chartRangeButtons = this.chartRangeButtons.bind(this);
+    this.changePercent = this.changePercent.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,35 +42,47 @@ class Chart extends React.Component {
     this.props.showWatchlist();
   }
   chartRangeButtons() {
-    const chartRange = ['1D', '1M', '3M', '6M', '1Y', '2Y', '5Y'].map((range, i) => {
-      return <li key={i}>
-          <button onClick={() => this.ChartChange(range)}
-          className={this.state.chartRange === range ? "current-range" : null}
-          id="range-button" >
-            {range}
-          </button>
-        </li>;
-    });
+    const chartRange = ["1D", "1M", "3M", "6M", "1Y", "2Y", "5Y"].map(
+      (range, i) => {
+        return (
+          <li key={i}>
+            <button
+              onClick={() => this.ChartChange(range)}
+              className={
+                this.state.chartRange === range ? `${(this.color() === '#21ce99') ? "current-green" : "current-red"}` : null
+              }
+              id={`${(this.color() === '#21ce99') ? "button-green" : "button-red"}`}
+            >
+              {range}
+            </button>
+          </li>
+        );
+      }
+    );
     return chartRange;
   }
 
   ChartChange(range) {
-    this.setState({ chartRange: range });
-    this.props.fetchChart(this.props.match.params.companySymbol, this.state.chartRange);
+    this.setState({ chartRange: range }, () =>
+      this.props.fetchChart(
+        this.props.match.params.companySymbol,
+        this.state.chartRange
+      )
+    );
   }
 
   chartData() {
     let data = [];
     this.props.stocks.chart.forEach((el, i) => {
-      if (!(el.marketAverage === -1) && i%3 == 0) {
-        data.push({ x: i, y: el.marketAverage });
+      if (!(el.high === -1) && i % 3 == 0) {
+        data.push({ x: i, y: el.high });
       }
     });
     return data;
   }
 
   color() {
-    if (this.props.stocks.change.quote.changePercent.toFixed(2) >= 0) {
+    if (this.changePercent() >= 0) {
       return "#21ce99";
     } else {
       return "#f45531";
@@ -87,17 +100,69 @@ class Chart extends React.Component {
     }
   }
 
+  changePercent() {
+    let changePercent;
+    switch (this.state.chartRange) {
+      case "1D":
+        changePercent = this.props.stocks.change.quote.changePercent.toFixed(2);
+        break;
+      case "1M":
+        changePercent = this.props.stocks.stats.month1ChangePercent.toFixed(2);
+        break;
+      case "3M":
+        changePercent = this.props.stocks.stats.month3ChangePercent.toFixed(2);
+        break;
+      case "6M":
+        changePercent = this.props.stocks.stats.month6ChangePercent.toFixed(2);
+        break;
+      case "1Y":
+        changePercent = this.props.stocks.stats.year1ChangePercent.toFixed(2);
+        break;
+      case "2Y":
+        changePercent = this.props.stocks.stats.year2ChangePercent.toFixed(2);
+        break;
+      case "5Y":
+        changePercent = this.props.stocks.stats.year5ChangePercent.toFixed(2);
+        break;
+      default:
+        debugger;
+        changePercent = this.props.stocks.change.quote.changePercent.toFixed(2);
+    }
+    return changePercent;
+  }
+
   chart() {
-    return <ResponsiveContainer width="100%" aspect={7.0 / 3.0}>
+    return (
+      <ResponsiveContainer width="100%" aspect={7.0 / 3.0}>
         <LineChart //   width={800}
           //   height={300}
-          data={this.chartData()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-          <Line type="monotone" dataKey="y" stroke={this.color()} strokeWidth={2}  dot={false} />
+          data={this.chartData()}
+          margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+        >
+          <Line
+            type="monotone"
+            dataKey="y"
+            stroke={this.color()}
+            strokeWidth={2}
+            dot={false}
+          />
           <XAxis dataKey="x" stroke="none" />
           <YAxis domain={["auto", "auto"]} stroke="none" />
-          <Tooltip wrapperStyle={{ background: "transparent", border: "none", color: "lightgray" }} cursor={{ strokeWidth: 1 }} offset={-90} isAnimationActive={false} position={{ x: 0, y: 0 }} content={<CustomTooltip />} />
+          <Tooltip
+            wrapperStyle={{
+              background: "transparent",
+              border: "none",
+              color: "lightgray"
+            }}
+            cursor={{ strokeWidth: 1 }}
+            offset={-90}
+            isAnimationActive={false}
+            position={{ x: 0, y: 0 }}
+            content={<CustomTooltip />}
+          />
         </LineChart>
-      </ResponsiveContainer>;
+      </ResponsiveContainer>
+    );
   }
   render() {
     // if (Object.keys(this.props.stocks).length < 4) return null;
@@ -117,50 +182,44 @@ class Chart extends React.Component {
       this.watchlistButton = "Remove from Watchlist";
       this.colorClass = "red";
     }
+
     let sign;
     let signClass;
-    if (this.props.stocks.change.quote.changePercent.toFixed(2) >= 0) {
+    if (this.changePercent() >= 0) {
       sign = "+";
       signClass = "pos";
     } else {
       sign = "-";
       signClass = "neg";
     }
-
-    return (
-      <div className="chart-detail">
+    // debugger
+    return <div className="chart-detail">
         <div className="company-info">
           <div className="company-display">
             <h1>{this.props.stocks.details.companyName}</h1>
             <h2 className="odometer" id="price">
               ${this.props.stocks.price.toFixed(2)}
             </h2>
-            <h3 className={`${signClass}`} id="ogChange" >
-              ({sign} {Math.abs(this.props.stocks.change.quote.changePercent).toFixed(2)})
+            <h3 className={`${signClass}`} id="ogChange">
+              ({sign} {Math.abs(this.changePercent())})
             </h3>
             <h3 id="ogPrice">${this.props.stocks.price.toFixed(2)}</h3>
           </div>
           <div className="company-watchlist">
-            <input
-              className={`watchlist-button ${this.colorClass}`}
-              type="button"
-              onClick={this.toggleWatchlist}
-              value={this.watchlistButton}
-            />
+            <input className={`watchlist-button ${this.colorClass}`} type="button" onClick={this.toggleWatchlist} value={this.watchlistButton} />
           </div>
         </div>
         <br />
         <br />
         <div className="chart">
-        {this.chart()}
-        <div className="range-div">
-          <ul className='chart-ranges'>{this.chartRangeButtons()}</ul>
-        </div>
+          {this.chart()}
+          <div className="range-div">
+            <ul className="chart-ranges">{this.chartRangeButtons()}</ul>
+          </div>
         </div>
         <br />
         <br />
-      </div>
-    );
+      </div>;
   }
 }
 

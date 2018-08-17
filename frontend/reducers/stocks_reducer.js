@@ -17,31 +17,31 @@ const stocksReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_CHART:
-      return merge(newState, { chart: action.chart });
+      return Object.assign(newState, { chart: action.chart });
 
     case RECEIVE_COMPANY_DETAILS:
-      return merge(newState, { details: action.details });
+      return Object.assign(newState, { details: action.details });
 
     case RECEIVE_STATS:
-      return merge(newState, { stats: action.stats });
+      return Object.assign(newState, { stats: action.stats });
 
     case RECEIVE_LOGO:
-      return merge(logo, { price: action.logo });
+      return Object.assign(logo, { price: action.logo });
 
     case RECEIVE_NEWS:
-      return merge(newState, { news: action.news });
+      return Object.assign(newState, { news: action.news });
 
     case RECEIVE_DASHBOARD_NEWS:
-      return merge(newState, { dashboardNews: action.dashboardNews });
+      return Object.assign(newState, { dashboardNews: action.dashboardNews });
 
     case RECEIVE_PEERS:
-      return merge(newState, { peers: action.peers });
+      return Object.assign(newState, { peers: action.peers });
 
     case RECEIVE_PRICE:
-      return merge(newState, { price: action.price });
+      return Object.assign(newState, { price: action.price });
 
     case RECEIVE_CHANGE:
-      return merge(newState, { change: action.change });
+      return Object.assign(newState, { change: action.change });
 
     default:
       return state;

@@ -8,17 +8,17 @@
   background-color: $background-dark;
   color: lightgray;
   height: 100vh;
-  
+
   .form-container {
     flex-direction: column;
     justify-content: center;
     align-self: center;
     margin: 0 auto;
-    
+
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 0.25px;
-    
+
     input {
       width: 253px;
       padding: 15px 20px;
@@ -40,21 +40,21 @@
       margin: 5px 5px;
       outline: none;
     }
-                                            .demo-submit {
-                                                  width: 353px;
-                                                  padding: 15px 20px;
-                                                  margin: 5px 0px;
-                                                  // background-color: blue;
-                                                  color: $robin-red;
-                                                  border: 1px solid $robin-red;
-                                                  font-size: 10pt;
-                                            }
-                                            .demo-submit:hover {
-                                              box-shadow: 0 0 0.1px $robin-red;
-                                              border: 1px solid $robin-red-light;
-                                              color: $robin-red-light;
-                                              margin: 5px 0px;
-                                            }
+    .demo-submit {
+      width: 355px;
+      padding: 15px 24px;
+      margin: 5px 0px;
+      // background-color: blue;
+      color: $robin-red;
+      border: 1px solid $robin-red;
+      font-size: 10pt;
+    }
+    .demo-submit:hover {
+      box-shadow: 0 0 0.1px $robin-red;
+      border: 1px solid $robin-red-light;
+      color: $robin-red-light;
+      margin: 5px 0px;
+    }
 
     .input-name {
       width: 100px;
@@ -112,7 +112,7 @@
   //     color: $robin-red-light;
   //   }
   // }
-  .demo-login *{
+  .demo-login * {
     text-decoration: none;
     color: $robin-red;
     h3:hover {
