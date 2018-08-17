@@ -13,9 +13,12 @@ A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A d
 ## Features
 * Secure user authentication using BCrypt
 * Can search up public companies on  NASDAQ, AMEX and NYSE
+![Search](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/Search.png "Search")
 * User can view custom/private dashboard and watchlists upon authentication
 * User can view recent headlines in business
+![News](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/News.png "News")
 * Can view current as well as historic stock data
+![watchlist](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/watchlist.png "watchlist")
 * Add/Remove stocks from your watchlist to your dashboard
 * User Friendly UI and implementing CSS Grid to keep code DRY
 ```
