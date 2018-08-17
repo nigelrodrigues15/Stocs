@@ -23,6 +23,7 @@ The companies were seeded into the database fromm NASDAQ
 * User can view custom/private dashboard and watchlists upon authentication
 * User can view recent headlines in business
 ![News](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/News.png "News")
+Can also quickly navigate to watchlist stocks
 * Can view current as well as historic stock data
 ![watchlist](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/watchlist.png "watchlist")
 * Add/Remove stocks from your watchlist to your dashboard
