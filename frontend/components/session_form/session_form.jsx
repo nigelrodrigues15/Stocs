@@ -111,16 +111,12 @@ class SessionForm extends React.Component {
   demoLogin() {
     return (
       <div className="demo">
-        <div className="switch-login">
-          <Link to="/signup">
-            <h3> Sign Up</h3>
-          </Link>
-        </div>
-        <div onClick={() => this.demoLogging()} className="demo-login">
-          <Link to="#">
-            <h3>Demo User</h3>
-          </Link>
-        </div>
+        <input
+              onClick={() => this.demoLogging()}
+              className="demo-submit"
+              type="button"
+              value="Demo User"
+            />
       </div>
     );
   }

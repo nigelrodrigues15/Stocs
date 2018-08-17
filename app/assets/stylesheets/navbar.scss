@@ -58,7 +58,7 @@
       color: $robin-green-light;
       padding: 5px;
       margin-right: 15px;
-      width: 300px;
+      width: 400px;
     }
     ::placeholder {
       color: $placeholder;
@@ -101,7 +101,7 @@
   margin: 0;
   margin-left: 18px;
   padding: 0;
-  width: 312px;
+  width: 412px;
   
   .result-div {
     // background-color: green;
@@ -121,11 +121,17 @@
     }
   }
 
+  .result-symbol {
+    color: $robin-green;
+  }
+
   .result-div:hover {
-    background-color: $robin-green;
+    // background-color: $robin-green;
+    background-color: $dark-hover;
     cursor: pointer;
     * {
-      background-color: $robin-green;
+      // background-color: $robin-green;
+      background-color: $dark-hover;
       cursor: pointer;
     }
   }

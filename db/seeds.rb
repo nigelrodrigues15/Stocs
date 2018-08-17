@@ -16,19 +16,42 @@ User.create({fname: "Nigel", lname: "Rodrigues", email: "nigel1@ualberta.ca", us
 # p "#{Rails.root}"
 # data = CSV.read("NASDAQ.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
 # data = CSV.read("/app/assets/companies/NASDAQ.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
-data = CSV.read("#{Rails.root}/app/assets/companies/NASDAQ.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
+data1 = CSV.read("#{Rails.root}/app/assets/companies/NASDAQ.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
+data2 = CSV.read("#{Rails.root}/app/assets/companies/NYSE.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
+data3 = CSV.read("#{Rails.root}/app/assets/companies/AMEX.csv", { encoding: "UTF-8", headers: true, header_converters: :symbol, converters: :all})
 
-hashed_data = data.map { |d| d.to_hash }
+hashed_data1 = data1.map { |d| d.to_hash }
+hashed_data2 = data2.map { |d| d.to_hash }
+hashed_data3 = data3.map { |d| d.to_hash }
+
 columnns = [:symbol, :name, :lastsale, :sector, :industry]
 
-filtered_hash = hashed_data.each do |hash|
+filtered_hash1 = hashed_data1.each do |hash|
+    hash.keep_if do |key,val|
+        columnns.include?(key)
+    end
+end
+
+filtered_hash2 = hashed_data2.each do |hash|
+    hash.keep_if do |key,val|
+        columnns.include?(key)
+    end
+end
+
+filtered_hash3 = hashed_data3.each do |hash|
     hash.keep_if do |key,val|
         columnns.include?(key)
     end
 end
 
 Company.destroy_all
-filtered_hash.each do |company|
+filtered_hash1.each do |company|
+    Company.create(company)
+end
+filtered_hash2.each do |company|
+    Company.create(company)
+end
+filtered_hash3.each do |company|
     Company.create(company)
 end
 
