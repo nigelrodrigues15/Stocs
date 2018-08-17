@@ -10,7 +10,6 @@
 
   img {
     width: 40vw;
-    // object-fit: contain;
   }
 
   div {
@@ -24,13 +23,12 @@
     justify-content: center;
     height: 100vh;
   }
-
+  
   * {
     align-items: center;
     margin: 0;
     padding: 0;
   }
-
 }
 
 @media (max-width: 800px) {
@@ -38,35 +36,32 @@
     margin-top: 50px;
     color: $robin-white;
     background-color: $background-dark;
-    // background-color: blue;
     display: grid;
     grid-template-columns: minmax(250px, 1fr);
     grid-template-rows: repeat(6, 1fr);
-  
+
     img {
       width: 60vw;
       // object-fit: contain;
     }
-  
+
     div {
       margin: 0 auto;
       padding: 20px;
       width: 402px;
     }
-  
+
     > div {
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 40vh;
     }
-  
+
     * {
       align-items: center;
       margin: 0;
       padding: 0;
     }
-  
   }
-
 }

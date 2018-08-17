@@ -2,7 +2,9 @@
 
 Stocs is a Ruby on Rails web application using React on the front end. With Stocs, you can search for live and historical stock data of almost every public trading company, as well as create and account to add stocks to your watchlist previews on a private dashboard.
 
-With it, users can freely browse and track their favourite companies to learn about the stock market and investing without any financial risk.
+With it, users can freely browse and track their favorite companies to learn about the stock market and investing without any financial risk. It is aimed to be similar in design and functionality as Robinhood.
+
+![Splash Page](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/SplashPage.png "Splash Page")
 
 A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A demo user can be found in the log in section if you'd like to preview the site without creating an account.
 
@@ -15,6 +17,34 @@ A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A d
 * User can view recent headlines in business
 * Can view current as well as historic stock data
 * Add/Remove stocks from your watchlist to your dashboard
+* User Friendly UI and implementing CSS Grid to keep code DRY
+```
+.splash {
+  margin-top: 50px;
+  color: $robin-white;
+  background-color: $background-dark;
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  img {
+    width: 40vw;
+  }
+
+  div {
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+
+}
+```
 
 ## Setup & Use
 * Clone this repo to your desktop
