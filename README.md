@@ -6,8 +6,8 @@ With it, users can freely browse and track their favourite companies to learn ab
 
 A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A demo user can be found in the log in section if you'd like to preview the site without creating an account.
 
-![alt text][logo]
-[logo]: https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/SplashPage.png "Splash Page"
+![alt text][https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/SplashPage.png "Splash Page"]
+
 ## Features
 * Simple, clean UI
 * Can search up public companies on  NASDAQ, AMEX and NYSE
