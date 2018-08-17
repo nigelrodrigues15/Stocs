@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import { fetchCompanies, fetchCompany } from "../../actions/company_actions";
 import { createWatchlist, showWatchlist, removeWatchlist } from "../../actions/watchlist_actions";
-import { fetchChart, fetchCompanyDetails, fetchStats,
+import {
+  fetchChart, fetchCompanyDetails, fetchStats, fetchChange,
   fetchLogo, fetchNews, fetchPeers, fetchPrice } from "../../actions/stock_actions";
 import Chart from "./chart";
 
@@ -24,6 +25,7 @@ const mapDispatchToProps = dispatch => {
     fetchNews: (sym, num) => dispatch(fetchNews(sym, num)),
     fetchPeers: sym => dispatch(fetchPeers(sym)),
     fetchPrice: sym => dispatch(fetchPrice(sym)),
+    fetchChange: sym => dispatch(fetchChange(sym)),
     createWatchlist: watchlistId => dispatch(createWatchlist(watchlistId)),
     showWatchlist: () => dispatch(showWatchlist()),
     removeWatchlist: watchlistId => dispatch(removeWatchlist(watchlistId))

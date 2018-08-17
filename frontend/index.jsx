@@ -6,8 +6,18 @@ import configureStore from "./store/store";
 //Temporary for testing
 import { login, logout, signup } from "./util/session_api_util";
 import { fetchCompanies, fetchCompany, updateLastSale } from "./util/company_api_util";
-import { getStock, currentStock, fetchChart, fetchCompanyDetails,
-  fetchStats, fetchLogo, fetchNews, fetchPeers, fetchPrice} from "./util/stocks_api_util";
+import {
+  getStock,
+  currentStock,
+  fetchChart,
+  fetchCompanyDetails,
+  fetchStats,
+  fetchLogo,
+  fetchNews,
+  fetchPeers,
+  fetchPrice,
+  fetchChange
+} from "./util/stocks_api_util";
 //End testing
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchNews = fetchNews;
   window.fetchPeers = fetchPeers;
   window.fetchPrice = fetchPrice;
+  window.fetchPrice = fetchPrice;
+  window.fetchChange = fetchChange;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;

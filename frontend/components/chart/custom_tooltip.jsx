@@ -12,7 +12,6 @@ class CustomToolTip extends React.Component {
     // const performance = document.getElementById("performance");
     // const hiddenPerformance = document.getElementById("hidden-performance");
     if (this.props.active) {
-      debugger;
       if (
         nextProps.payload &&
         nextProps.payload[0] &&

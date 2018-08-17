@@ -60,7 +60,8 @@
       background-color: $background-dark;
       color: $robin-green-light;
       padding: 5px;
-      width: 40vw;
+      // width: 40vw;
+      width: 400px;
     }
     ::placeholder {
       color: $placeholder;
@@ -134,7 +135,7 @@
 
 @media (max-width: 800px) {
   .navbar {
-    height: 15vh;
+    // height: 15vh;
 
     img {
       height: 40px;

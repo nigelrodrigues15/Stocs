@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "constants";
 
+.company-chart {
+  max-width: 100%;
+}
+
 .company-detail {
   display: grid;
   margin-top: 15vh;
@@ -52,6 +56,9 @@
   border: 1px solid $robin-red-light;
   color: $robin-red-light;
 }
+.chart-detail {
+  display: block;
+}
 .chart {
   display: block;
   width: 65vw;
@@ -76,4 +83,43 @@
 }
 #ogPrice {
   display: none;
+}
+.company-detail p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 19px;
+}
+.additional-details {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(
+      100px,
+      1fr
+    );
+  row-gap: 10px;
+  h1 {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    line-height: 30px;
+  }
+  h3 {
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.25px;
+    line-height: 19px;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 19px;
+  }
+  .text {
+    display: block;
+    justify-content: left;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
 }

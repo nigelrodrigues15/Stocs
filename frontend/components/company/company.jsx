@@ -38,8 +38,9 @@ class Company extends React.Component {
     //       dispatch(receiveChart(chart))
     //     )
     //   );
-    this.props.fetchCompany(companyId);
-    this.props.fetchCompanyDetails(companySymbol);
+    this.props.fetchCompany(companyId).then(() => (
+    this.props.fetchCompanyDetails(companySymbol))).then(() => (
+    this.props.fetchStats(companySymbol)));
   }
 
   componentDidMount() {
@@ -49,13 +50,24 @@ class Company extends React.Component {
     );
   }
 
+  color() {
+    const change = document.getElementById("price");
+
+    if (change >= 0) {
+      return "#21ce99";
+    } else {
+      return "#E30000";
+    }
+  }
+
   render() {
     if (this.props.company === undefined) return null;
-    if (Object.keys(this.props.stocks).length < 1) return null;
+    if (this.props.stocks.details === undefined) return null;
+    if (this.props.stocks.stats === undefined) return null;
+    // debugger
 
     // if (this.props.stocks.price === undefined) return null;
-    return (
-      <div className="company-detail">
+    return <div className="company-detail">
         <div />
         <div className="company-chart">
           <ChartContainer />
@@ -65,19 +77,39 @@ class Company extends React.Component {
         <div>
           <h1>About</h1>
           <p>{this.props.stocks.details.description}</p>
+          <br />
           <div className="additional-details">
-            <h3>CEO</h3>
-            <p>{this.props.stocks.details.CEO}</p>
-            <h3>Sector</h3>
-            <p>{this.props.stocks.details.sector}</p>
-            <h3>Website</h3>
-            <p>{this.props.stocks.details.website}</p>
+            <div className="text">
+              <h3>CEO</h3>
+              <p>{this.props.stocks.details.CEO}</p>
+            </div>
+            <div className="text">
+              <h3>Sector</h3>
+              <p>{this.props.stocks.details.sector}</p>
+            </div>
+            <div className="text">
+              <h3>Website</h3>
+              <p>{this.props.stocks.details.website}</p>
+            </div>
+            <div className="text">
+              <h3>Market Cap</h3>
+              <p>{this.props.stocks.stats.marketcap}</p>
+            </div>
+            <div className="text">
+              <h3>Dividend Yield</h3>
+              <p>{this.props.stocks.stats.dividendYield.toFixed(2)}</p>
+            </div>
+            <div className="text">
+              <h3>Return on Equity</h3>
+              <p>
+                {this.props.stocks.stats.returnOnEquity ? this.props.stocks.stats.returnOnEquity.toFixed(2) : null }
+              </p>
+            </div>
           </div>
         </div>
         <div />
         <div />
-      </div>
-    );
+      </div>;
   }
 }
 

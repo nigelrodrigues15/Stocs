@@ -35,6 +35,7 @@ class Chart extends React.Component {
     this.props.fetchChart(companySymbol, this.state.chartRange);
     this.props.fetchPrice(companySymbol);
     this.props.fetchStats(companySymbol);
+    this.props.fetchChange(companySymbol);
     this.props.fetchCompanyDetails(companySymbol);
     this.props.showWatchlist();
   }
@@ -91,7 +92,12 @@ class Chart extends React.Component {
     );
   }
   render() {
-    if (Object.keys(this.props.stocks).length < 4) return null;
+    // if (Object.keys(this.props.stocks).length < 4) return null;
+    if (this.props.stocks.details === undefined) return null;
+    if (this.props.stocks.stats === undefined) return null;
+    if (this.props.stocks.chart === undefined) return null;
+    if (this.props.stocks.change === undefined) return null;
+    if (this.props.stocks.price === undefined) return null;
     if (Object.keys(this.props.watchlist).length === 0 || this.props.watchlist[this.props.match.params.companyId]===undefined) {
         this.watchlistButton = "Add to Watchlist";
         this.colorClass = "green";
@@ -99,6 +105,7 @@ class Chart extends React.Component {
         this.watchlistButton = "Remove from Watchlist";
         this.colorClass = "red";
       }
+      // debugger
     return <div className="chart-detail">
         <div className="company-info">
           <div className="company-display">
@@ -107,6 +114,7 @@ class Chart extends React.Component {
               ${this.props.stocks.price.toFixed(2)}
             </h2>
             <h3 id="ogPrice">${this.props.stocks.price.toFixed(2)}</h3>
+          <h3 id="ogChange">{this.props.stocks.change.quote.changePercent.toFixed(2)}</h3>
           </div>
           <div className="company-watchlist">
             <input className={`watchlist-button ${this.colorClass}`} type="button" onClick={this.toggleWatchlist} value={this.watchlistButton} />

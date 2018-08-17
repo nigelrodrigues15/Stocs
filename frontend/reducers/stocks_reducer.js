@@ -6,7 +6,9 @@ import {
   RECEIVE_STATS,
   RECEIVE_LOGO,
   RECEIVE_NEWS,
+  RECEIVE_DASHBOARD_NEWS,
   RECEIVE_PEERS,
+  RECEIVE_CHANGE,
   RECEIVE_PRICE
 } from "../actions/stock_actions";
 
@@ -29,11 +31,17 @@ const stocksReducer = (state = {}, action) => {
     case RECEIVE_NEWS:
       return merge(newState, { news: action.news });
 
+    case RECEIVE_DASHBOARD_NEWS:
+      return merge(newState, { dashboardNews: action.dashboardNews });
+
     case RECEIVE_PEERS:
       return merge(newState, { peers: action.peers });
 
     case RECEIVE_PRICE:
       return merge(newState, { price: action.price });
+
+    case RECEIVE_CHANGE:
+      return merge(newState, { change: action.change });
 
     default:
       return state;
