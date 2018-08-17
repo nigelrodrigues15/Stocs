@@ -153,7 +153,9 @@ class Chart extends React.Component {
         <br />
         <div className="chart">
         {this.chart()}
+        <div className="range-div">
           <ul className='chart-ranges'>{this.chartRangeButtons()}</ul>
+        </div>
         </div>
         <br />
         <br />
