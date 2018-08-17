@@ -15,11 +15,12 @@ class Chart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chartRange: "1d"
+      chartRange: "1D"
     };
     this.chartData = this.chartData.bind(this);
     this.toggleWatchlist = this.toggleWatchlist.bind(this);
     this.ajaxcalls = this.ajaxcalls.bind(this);
+    this.chartRangeButtons = this.chartRangeButtons.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -39,11 +40,28 @@ class Chart extends React.Component {
     this.props.fetchCompanyDetails(companySymbol);
     this.props.showWatchlist();
   }
+  chartRangeButtons() {
+    const chartRange = ['1D', '1M', '3M', '6M', '1Y', '2Y', '5Y'].map((range, i) => {
+      return <li key={i}>
+          <button onClick={() => this.ChartChange(range)}
+          className={this.state.chartRange === range ? "current-range" : null}
+          id="range-button" >
+            {range}
+          </button>
+        </li>;
+    });
+    return chartRange;
+  }
+
+  ChartChange(range) {
+    this.setState({ chartRange: range });
+    this.props.fetchChart(this.props.match.params.companySymbol, this.state.chartRange);
+  }
 
   chartData() {
     let data = [];
     this.props.stocks.chart.forEach((el, i) => {
-      if (!(el.marketAverage === -1)) {
+      if (!(el.marketAverage === -1) && i%3 == 0) {
         data.push({ x: i, y: el.marketAverage });
       }
     });
@@ -70,35 +88,20 @@ class Chart extends React.Component {
   }
 
   chart() {
-    return (
-      <ResponsiveContainer width="100%" aspect={7.0 / 3.0}>
-        <LineChart
-          //   width={800}
+    return <ResponsiveContainer width="100%" aspect={7.0 / 3.0}>
+        <LineChart //   width={800}
           //   height={300}
-          data={this.chartData()}
-          margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
-        >
-          <Line type="monotone" dataKey="y" stroke={this.color()} dot={false} />
+          data={this.chartData()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+          <Line type="monotone" dataKey="y" stroke={this.color()} strokeWidth={2}  dot={false} />
           <XAxis dataKey="x" stroke="none" />
           <YAxis domain={["auto", "auto"]} stroke="none" />
-          <Tooltip
-            wrapperStyle={{
-              background: "transparent",
-              border: "none",
-              color: "lightgray"
-            }}
-            cursor={{ strokeWidth: 1 }}
-            offset={-90}
-            isAnimationActive={false}
-            position={{ x: 0, y: 0 }}
-            content={<CustomTooltip />}
-          />
+          <Tooltip wrapperStyle={{ background: "transparent", border: "none", color: "lightgray" }} cursor={{ strokeWidth: 1 }} offset={-90} isAnimationActive={false} position={{ x: 0, y: 0 }} content={<CustomTooltip />} />
         </LineChart>
-      </ResponsiveContainer>
-    );
+      </ResponsiveContainer>;
   }
   render() {
     // if (Object.keys(this.props.stocks).length < 4) return null;
+    // debugger
     if (this.props.stocks.details === undefined) return null;
     if (this.props.stocks.stats === undefined) return null;
     if (this.props.stocks.chart === undefined) return null;
@@ -123,7 +126,7 @@ class Chart extends React.Component {
       sign = "-";
       signClass = "neg";
     }
-    // debugger
+
     return (
       <div className="chart-detail">
         <div className="company-info">
@@ -148,7 +151,10 @@ class Chart extends React.Component {
         </div>
         <br />
         <br />
-        <div className="chart">{this.chart()}</div>
+        <div className="chart">
+        {this.chart()}
+          <ul className='chart-ranges'>{this.chartRangeButtons()}</ul>
+        </div>
         <br />
         <br />
       </div>

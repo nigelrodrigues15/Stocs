@@ -31,11 +31,11 @@
   .logo:hover .logo-std {
     display: none;
   }
-
+  
   .logo:hover .logo-hov {
     display: inline-block;
   }
-
+  
   .nav-left {
     display: flex;
     justify-content: center;
@@ -77,14 +77,14 @@
       }
     }
   }
-
+  
   .nav-link p {
     display: inline-block;
     padding-right: 50px;
     margin: 0 auto;
     color: $robin-white;
   }
-
+  
   .logging {
     color: $robin-white;
     text-decoration: none;
@@ -94,16 +94,17 @@
   }
 }
 .results-search {
-  background-color: $background-dark;
+  // background-color: $background-dark;
   position: absolute;
   display: block;
   top: 55px;
   margin: 0;
-  margin-left: 25px;
+  margin-left: 18px;
   padding: 0;
-  width: 40.9vw;
-
+  width: 312px;
+  
   .result-div {
+    // background-color: green;
     display: flex;
     height: 27px;
     align-items: center;
@@ -116,7 +117,7 @@
       padding: 0px;
     }
     .result-symbol {
-      width: 100px;
+      width: 70px;
     }
   }
 

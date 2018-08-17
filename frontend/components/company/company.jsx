@@ -38,9 +38,10 @@ class Company extends React.Component {
     //       dispatch(receiveChart(chart))
     //     )
     //   );
-    this.props.fetchCompany(companyId).then(() => (
-    this.props.fetchCompanyDetails(companySymbol))).then(() => (
-    this.props.fetchStats(companySymbol)));
+    this.props
+      .fetchCompany(companyId)
+      .then(() => this.props.fetchCompanyDetails(companySymbol))
+      .then(() => this.props.fetchStats(companySymbol));
   }
 
   componentDidMount() {
@@ -59,13 +60,27 @@ class Company extends React.Component {
     }
   }
 
+  marketCap(n) {
+    // got from https://gist.github.com/MartinMuzatko/1060fe584d17c7b9ca6e
+
+    if (n >= 1000) {
+      var units = ["k", "M", "B", "T"];
+
+      let unit = Math.floor((n.toFixed(0).length - 1) / 3) * 3;
+      let num = (n / ("1e" + unit)).toFixed(2);
+      let unitname = units[Math.floor(unit / 3) - 1];
+
+      return num + unitname;
+    }
+
+    return n.toLocaleString();
+  }
+
   render() {
     if (this.props.company === undefined) return null;
     if (this.props.stocks.details === undefined) return null;
     if (this.props.stocks.stats === undefined) return null;
-    // debugger
 
-    // if (this.props.stocks.price === undefined) return null;
     return <div className="company-detail">
         <div />
         <div className="company-chart">
@@ -92,7 +107,7 @@ class Company extends React.Component {
             </div>
             <div className="text">
               <h3>Market Cap</h3>
-              <p>{this.props.stocks.stats.marketcap}</p>
+              <p>{this.marketCap(this.props.stocks.stats.marketcap)}</p>
             </div>
             <div className="text">
               <h3>Dividend Yield</h3>
@@ -101,7 +116,9 @@ class Company extends React.Component {
             <div className="text">
               <h3>Return on Equity</h3>
               <p>
-                {this.props.stocks.stats.returnOnEquity ? this.props.stocks.stats.returnOnEquity.toFixed(2) : null }
+                {this.props.stocks.stats.returnOnEquity
+                  ? this.props.stocks.stats.returnOnEquity.toFixed(2)
+                  : null}
               </p>
             </div>
           </div>

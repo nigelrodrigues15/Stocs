@@ -6,7 +6,7 @@
 .company-chart {
   max-width: 100%;
 }
-.dashboard-welcome{
+.dashboard-welcome {
   font-size: 33px;
   font-weight: 500;
   letter-spacing: -0.29px;
@@ -14,9 +14,9 @@
 }
 .dashboard-news h1 {
   font-size: 26px;
-    font-weight: 500;
-    letter-spacing: -.14px;
-    line-height: 30px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  line-height: 30px;
 }
 .company-detail {
   display: grid;
@@ -149,5 +149,21 @@
     text-align: left;
     padding: 0;
     margin: 0;
+  }
+}
+.chart-ranges {
+  display: inline-flex;
+  #range-button {
+    padding-right: 20px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 10pt;
+  }
+  #range-button:hover {
+    color: $robin-green;
+  }
+  .current-range {
+    color: $robin-green;
   }
 }
