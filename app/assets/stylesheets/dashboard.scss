@@ -62,22 +62,27 @@
     // justify-content: space-between;
     height: 100px;
     padding-bottom: 10px;
-
+    .image-container {
+      display: flex;
+    }
     .image-container {
       width: 100px;
       height: 100px;
       display: block;
-      overflow: hidden;
-    }
-    img {
-      display: inline-flex;
-      height: auto;
-      width: 125px;
-      // position: relative;
-      // left: -40px;
+      * {
+        width: 100px;
+        text-align: center;
+        padding-top: 25px;
+        font-size: 50px;
+        color: $robin-green;
+      }
     }
     a {
       background-color: $background-dark;
+      display: inline-flex;
+      padding-right: 10px;
+      align-items: center;
+      width: 100%;
     }
     li {
       padding-left: 30px;

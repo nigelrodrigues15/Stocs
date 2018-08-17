@@ -9,7 +9,6 @@ class Dashboard extends React.Component {
     // this.news = this.news.bind(this);
   }
 
-
   componentDidMount() {
     this.props.showWatchlist();
     this.props.fetchDashboardNews();
@@ -31,9 +30,7 @@ class Dashboard extends React.Component {
       return (
         <div key={i} className="articles">
           <div className="image-container">
-            <img
-              src={article.urlToImage ? article.urlToImage : window.images.logo}
-            />
+            <i class="far fa-newspaper" />
           </div>
           <a key={i} href={article.url}>
             <li>
@@ -99,7 +96,8 @@ class Dashboard extends React.Component {
           <h1 className="dashboard-welcome">Welcome to Stocs</h1>
           <img src={window.images.staticGraph} alt="" />
           <div className="dashboard-news">
-            <h1>News</h1>
+            <br />
+            <h1>Recent News</h1>
             <ul>{this.dashboardNews(4)}</ul>
           </div>
         </div>

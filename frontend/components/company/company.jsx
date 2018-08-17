@@ -51,12 +51,11 @@ class Company extends React.Component {
   }
 
   color() {
-    const change = document.getElementById("price");
-
+    const change = document.getElementById("ogChange");
     if (change >= 0) {
-      return "#21ce99";
+      return "pos";
     } else {
-      return "#E30000";
+      return "neg";
     }
   }
 

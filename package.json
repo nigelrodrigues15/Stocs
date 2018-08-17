@@ -2,6 +2,7 @@
   "name": "Stocks",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "animate.css": "^3.7.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

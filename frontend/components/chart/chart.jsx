@@ -8,7 +8,7 @@ import {
   YAxis,
   ResponsiveContainer
 } from "recharts";
-import CustomTooltip from './custom_tooltip';
+import CustomTooltip from "./custom_tooltip";
 import Odometer from "react-odometerjs";
 
 class Chart extends React.Component {
@@ -51,15 +51,18 @@ class Chart extends React.Component {
   }
 
   color() {
-    if (true) {
+    if (this.props.stocks.change.quote.changePercent.toFixed(2) >= 0) {
       return "#21ce99";
     } else {
-      return "#E30000";
+      return "#f45531";
     }
   }
 
   toggleWatchlist() {
-    if (Object.keys(this.props.watchlist).length === 0 || this.props.watchlist[this.props.match.params.companyId]===undefined) {
+    if (
+      Object.keys(this.props.watchlist).length === 0 ||
+      this.props.watchlist[this.props.match.params.companyId] === undefined
+    ) {
       this.props.createWatchlist(this.props.match.params.companyId);
     } else {
       this.props.removeWatchlist(this.props.match.params.companyId);
@@ -67,7 +70,6 @@ class Chart extends React.Component {
   }
 
   chart() {
-
     return (
       <ResponsiveContainer width="100%" aspect={7.0 / 3.0}>
         <LineChart
@@ -80,13 +82,17 @@ class Chart extends React.Component {
           <XAxis dataKey="x" stroke="none" />
           <YAxis domain={["auto", "auto"]} stroke="none" />
           <Tooltip
-              wrapperStyle={{background: 'transparent', border: 'none', color: 'lightgray'}}
-              cursor={{strokeWidth: 1}}
-              offset={-90}
-              isAnimationActive={false}
-              position={{x: 0, y: 0 }}
-              content={<CustomTooltip />}
-            />
+            wrapperStyle={{
+              background: "transparent",
+              border: "none",
+              color: "lightgray"
+            }}
+            cursor={{ strokeWidth: 1 }}
+            offset={-90}
+            isAnimationActive={false}
+            position={{ x: 0, y: 0 }}
+            content={<CustomTooltip />}
+          />
         </LineChart>
       </ResponsiveContainer>
     );
@@ -98,26 +104,46 @@ class Chart extends React.Component {
     if (this.props.stocks.chart === undefined) return null;
     if (this.props.stocks.change === undefined) return null;
     if (this.props.stocks.price === undefined) return null;
-    if (Object.keys(this.props.watchlist).length === 0 || this.props.watchlist[this.props.match.params.companyId]===undefined) {
-        this.watchlistButton = "Add to Watchlist";
-        this.colorClass = "green";
-      } else {
-        this.watchlistButton = "Remove from Watchlist";
-        this.colorClass = "red";
-      }
-      // debugger
-    return <div className="chart-detail">
+    if (
+      Object.keys(this.props.watchlist).length === 0 ||
+      this.props.watchlist[this.props.match.params.companyId] === undefined
+    ) {
+      this.watchlistButton = "Add to Watchlist";
+      this.colorClass = "green";
+    } else {
+      this.watchlistButton = "Remove from Watchlist";
+      this.colorClass = "red";
+    }
+    let sign;
+    let signClass;
+    if (this.props.stocks.change.quote.changePercent.toFixed(2) >= 0) {
+      sign = "+";
+      signClass = "pos";
+    } else {
+      sign = "-";
+      signClass = "neg";
+    }
+    // debugger
+    return (
+      <div className="chart-detail">
         <div className="company-info">
           <div className="company-display">
-            <h2>{this.props.stocks.details.companyName}</h2>
+            <h1>{this.props.stocks.details.companyName}</h1>
             <h2 className="odometer" id="price">
               ${this.props.stocks.price.toFixed(2)}
             </h2>
+            <h3 className={`${signClass}`} id="ogChange" >
+              ({sign} {Math.abs(this.props.stocks.change.quote.changePercent).toFixed(2)})
+            </h3>
             <h3 id="ogPrice">${this.props.stocks.price.toFixed(2)}</h3>
-          <h3 id="ogChange">{this.props.stocks.change.quote.changePercent.toFixed(2)}</h3>
           </div>
           <div className="company-watchlist">
-            <input className={`watchlist-button ${this.colorClass}`} type="button" onClick={this.toggleWatchlist} value={this.watchlistButton} />
+            <input
+              className={`watchlist-button ${this.colorClass}`}
+              type="button"
+              onClick={this.toggleWatchlist}
+              value={this.watchlistButton}
+            />
           </div>
         </div>
         <br />
@@ -125,7 +151,8 @@ class Chart extends React.Component {
         <div className="chart">{this.chart()}</div>
         <br />
         <br />
-      </div>;
+      </div>
+    );
   }
 }
 

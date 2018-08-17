@@ -6,7 +6,18 @@
 .company-chart {
   max-width: 100%;
 }
-
+.dashboard-welcome{
+  font-size: 33px;
+  font-weight: 500;
+  letter-spacing: -0.29px;
+  line-height: 42px;
+}
+.dashboard-news h1 {
+  font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -.14px;
+    line-height: 30px;
+}
 .company-detail {
   display: grid;
   margin-top: 15vh;
@@ -56,6 +67,14 @@
   border: 1px solid $robin-red-light;
   color: $robin-red-light;
 }
+.pos {
+  color: $robin-green;
+  font-weight: 400;
+}
+.neg {
+  color: $robin-red;
+  font-weight: 400;
+}
 .chart-detail {
   display: block;
 }
@@ -83,6 +102,13 @@
 }
 #ogPrice {
   display: none;
+}
+#price {
+  display: inline;
+}
+#ogChange {
+  display: inline-block;
+  padding-left: 15px;
 }
 .company-detail p {
   font-size: 13px;
@@ -114,6 +140,8 @@
     font-weight: 400;
     letter-spacing: 0.25px;
     line-height: 19px;
+    text-align: justify;
+    text-justify: inter-word;
   }
   .text {
     display: block;
