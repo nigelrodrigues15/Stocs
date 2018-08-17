@@ -10,10 +10,16 @@ A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A d
 
 ![Demo Login](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/DemoLogin.png "DemoLogin")
 
+## Setup & Use
+* Clone this repo to your desktop
+* Using terminal `bundle install` and `npm install`
+* Run `npm start` and `rails s` to start the application. You will be able to access it on localhost:3000
+
 ## Features
 * Secure user authentication using BCrypt
 * Can search up public companies on  NASDAQ, AMEX and NYSE
 ![Search](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/Search.png "Search")
+The companies were seeded into the database fromm NASDAQ
 * User can view custom/private dashboard and watchlists upon authentication
 * User can view recent headlines in business
 ![News](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/News.png "News")
@@ -21,6 +27,8 @@ A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A d
 ![watchlist](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/watchlist.png "watchlist")
 * Add/Remove stocks from your watchlist to your dashboard
 * User Friendly UI and implementing CSS Grid to keep code DRY
+
+Entire CSS code for the splash page:
 ```
 .splash {
   margin-top: 50px;
@@ -48,11 +56,6 @@ A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A d
 
 }
 ```
-
-## Setup & Use
-* Clone this repo to your desktop
-* Using terminal `bundle install` and `npm install`
-* Run `npm start` and `rails s` to start the application. You will be able to access it on localhost:3000
 
 ## Future Work
 ### Buy/Sell virtual stock
