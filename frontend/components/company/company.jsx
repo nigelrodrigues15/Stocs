@@ -125,6 +125,9 @@ class Company extends React.Component {
         </div>
         <div />
         <div />
+      <div className="attribution-iex">
+          <p >Data provided for free by IEX. View IEX’s Terms of Use.</p>
+        </div>
       </div>;
   }
 }

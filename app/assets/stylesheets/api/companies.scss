@@ -159,7 +159,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  #button-green, #button-red {
+  #button-green,
+  #button-red {
     padding-right: 20px;
     text-decoration: none;
     border: none;
@@ -181,7 +182,23 @@
   #button-red:hover {
     color: $robin-red;
   }
-  #button-green:focus, #button-red:focus {
+  #button-green:focus,
+  #button-red:focus {
     outline: none;
+  }
+}
+.attribution-iex {
+  display: block;
+  margin: 0;
+  * {
+    font-size: 6px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 19px;
+    text-align: left;
+    text-justify: inter-word;
+    color: $placeholder;
+    margin-top: 100px;
+    justify-content: left;
   }
 }

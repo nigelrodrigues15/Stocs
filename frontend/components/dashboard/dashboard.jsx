@@ -65,13 +65,22 @@ class Dashboard extends React.Component {
     return result;
   }
   watchlists() {
-    debugger
+    debugger;
     if (this.props.watchlists.length === 0) return null;
     if (Object.keys(this.props.companies).length === 0) return null;
     let result = this.props.watchlists.map((watchlist, i) => {
-      return <li key={i} onClick={this.selectCompany(watchlist.company_id, this.props.companies[watchlist.company_id].symbol)} className="watchlist-company">
+      return (
+        <li
+          key={i}
+          onClick={this.selectCompany(
+            watchlist.company_id,
+            this.props.companies[watchlist.company_id].symbol
+          )}
+          className="watchlist-company"
+        >
           {this.props.companies[watchlist.company_id].symbol}
-        </li>;
+        </li>
+      );
     });
     return result;
   }
@@ -91,6 +100,9 @@ class Dashboard extends React.Component {
             <br />
             <h1>Recent News</h1>
             <ul>{this.dashboardNews(4)}</ul>
+            <div className="attribution-news">
+              <p>Powered by News API</p>
+            </div>
           </div>
         </div>
         <div className="dashboard-watchlists">

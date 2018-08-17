@@ -126,3 +126,20 @@
     }
   }
 }
+
+.attribution-news {
+  display: block;
+  margin: 0;
+  * {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 19px;
+    text-align: left;
+    text-justify: inter-word;
+    color: $placeholder;
+    margin-top: 10px;
+    margin-left:22px; 
+    justify-content: left;
+  }
+}
