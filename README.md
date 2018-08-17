@@ -1,24 +1,17 @@
-# README
+# STOCS 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stocs is a Ruby on Rails web application using React on the front end. With Stocs, you can search for live and historical stock data of almost every public trading company, as well as create and account to add stocks to your watchlist previews on a private dashboard.
 
-Things you may want to cover:
+With it, users can freely browse and track their favourite companies to learn about the stock market and investing without any financial risk.
 
-* Ruby version
+A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A demo user can be found in the log in section if you'd like to preview the site without creating an account.
 
-* System dependencies
+![alt text][logo]
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+## Features
+* Simple, clean UI
+* Can search up public companies on  NASDAQ, AMEX and NYSE
+* User Authentication for custom/private dashboard and watchlists
+* Can view current as well as historic stock data
+* Add/Remove stocks from your watchlist to your dashboard
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
