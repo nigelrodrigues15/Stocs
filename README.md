@@ -18,16 +18,32 @@ A link to the Live site can be found [here](https://stocs.herokuapp.com/#/)! A d
 ## Features
 * Secure user authentication using BCrypt
 * Can search up public companies on  NASDAQ, AMEX and NYSE
-![Search](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/Search.png "Search")
-The companies were seeded into the database fromm NASDAQ
 * User can view custom/private dashboard and watchlists upon authentication
 * User can view recent headlines in business
-![News](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/News.png "News")
-Can also quickly navigate to watchlist stocks
 * Can view current as well as historic stock data
-![watchlist](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/watchlist.png "watchlist")
 * Add/Remove stocks from your watchlist to your dashboard
 * User Friendly UI and implementing CSS Grid to keep code DRY
+
+### Sticky Navbar with search capabilities after authentication
+The Navigation Bar is always displayed on the top of the display and renders the search bar after the User has authenticated. Prior to authentication, the navbar links to the login, signup or back to the home page. However after logging in (a demo login is also available), the navigation bar now links to the dashboard , log out and the search bar. 
+
+The search bar is able to search for any public company on the New York Stock Exchange (NYSE), NASDAQ or AMEX and select them from the matches provided by the dropdown search. 
+
+![Search](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/Search.png "Search")
+The companies were seeded into the database fromm NASDAQ
+
+### Informative and relevant news feed
+On the Dashboard, business relevant news feed is present with hyperlinks to their respective sources, allowing the User to gain insight into current events happening to businesses, possibly influencing inestment descisions. The news is provided list style and displays the 4 top headlines in major business news. 
+
+![News](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/News.png "News")
+
+### Custom Dashboaord to view stocks
+On the dashboard, a list of watchlist stocks are available for the user, such that easy navigation through the website is possible. The list of stock companies that are watchlisted can be seen on the dashboard with links to the show page. 
+
+![watchlist](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/watchlist.png "watchlist")
+
+### CSS Grid & Media Queries to create the Splash Page (ie. Home Page)
+CSS Grid is used throughout the entire website, to keep the CSS short yet functional. The home page uses CSS grid along with media queries in order to make the home page resposibile and fit for mobile use. In future works media queries will be used through out the website, allowing it to be mobile friendly. 
 
 Entire CSS code for the splash page:
 ```
