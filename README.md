@@ -81,16 +81,16 @@ Entire CSS code for the splash page:
 * RESTful APIs to send JSON data to the front end
 ### In the Frontend
 * Single Page application using React and Redux
-** React used for virtual ReactDOM and navigation through React Router and React History
+* * React used for virtual ReactDOM and navigation through React Router and React History
 * Styling done with SASS with FontAwesome and AnimateCSS libraries
 * JSX transpiled into JavaScript using Babel
 * Additional Technologies
 * JSON data created and sent via Jbuilder
 ### Additional Technologies
-NodeJs
-AJAX
-npm(Node Package Manager)
-webpack
+* NodeJs
+* AJAX for API calls to backend as well as 3rd part API's
+* Node Package Manager (npm)
+* webpack
 
 
 ## Future Work
