@@ -38,7 +38,7 @@ On the Dashboard, business relevant news feed is present with hyperlinks to thei
 ![News](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/News.png "News")
 
 ### View realtime and historic stock data
-On a company view page, a large user friendly graph is available for the user, with live stock price and percent change next to the company title. This data will be updates as the User hovers over certain reagions of the graph, where the stock price at that time is shown. Historical data is also available, with options of 1D, 1M, 2M, 6M, 1YR, 2YR, 5YR. Addtional data for the company can be found under the graph with key company statistics like market value.  
+On a company view page, a large user friendly graph is available for the user, with live stock price and percent change next to the company title. This data will be updates as the User hovers over certain reagions of the graph, where the stock price at that time is shown. Historical data is also available, with options of 1D, 1M, 2M, 6M, 1YR, 2YR, 5YR. Addtional data for the company can be found under the graph with key company statistics like CEO, Sector, website and market cap.  
 
 ![watchlist](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/watchlist.png "watchlist")
 
@@ -73,6 +73,25 @@ Entire CSS code for the splash page:
 
 }
 ```
+
+## Technologies
+### In the Backend
+* Rails backend framework
+* PostgreSQL database
+* RESTful APIs to send JSON data to the front end
+### In the Frontend
+* Single Page application using React and Redux
+** React used for virtual ReactDOM and navigation through React Router and React History
+* Styling done with SASS with FontAwesome and AnimateCSS libraries
+* JSX transpiled into JavaScript using Babel
+* Additional Technologies
+* JSON data created and sent via Jbuilder
+### Additional Technologies
+NodeJs
+AJAX
+npm(Node Package Manager)
+webpack
+
 
 ## Future Work
 ### Buy/Sell virtual stock
