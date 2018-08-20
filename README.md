@@ -37,8 +37,8 @@ On the Dashboard, business relevant news feed is present with hyperlinks to thei
 
 ![News](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/News.png "News")
 
-### Custom Dashboaord to view stocks
-On the dashboard, a list of watchlist stocks are available for the user, such that easy navigation through the website is possible. The list of stock companies that are watchlisted can be seen on the dashboard with links to the show page. 
+### View realtime and historic stock data
+On a company view page, a large user friendly graph is available for the user, with live stock price and percent change next to the company title. This data will be updates as the User hovers over certain reagions of the graph, where the stock price at that time is shown. Historical data is also available, with options of 1D, 1M, 2M, 6M, 1YR, 2YR, 5YR. Addtional data for the company can be found under the graph with key company statistics like market value.  
 
 ![watchlist](https://github.com/nigelrodrigues15/Stocs/blob/master/app/assets/images/watchlist.png "watchlist")
 
