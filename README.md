@@ -98,4 +98,4 @@ Entire CSS code for the splash page:
 With this feature users will be able to trade in a virtual stock market to gain valuable experience in the possible results of their investments without the actual risks of making them.
 
 ### Suggestions
-When searching specific companies, users can view similar companies in the industry/sector to gain a better understanding of the industry as well as potential competitors.
+When searching specific companies, users can view similar companies in the industry/sector to gain a better understanding of the industry as well as potential competitors. The live stite may take a while to load as the app could be sleeping in heroku.
