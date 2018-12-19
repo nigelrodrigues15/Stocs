@@ -101,4 +101,4 @@ With this feature users will be able to trade in a virtual stock market to gain 
 When searching specific companies, users can view similar companies in the industry/sector to gain a better understanding of the industry as well as potential competitors. The live stite may take a while to load as the app could be sleeping in heroku.
 
 ### Improved Dashboard
-Currently the dashboard only has saved stock companies, however, more information can be added including their prices and if they have increased or decreased. 
+Currently the dashboard only has saved stock companies, however, more information can be added including their prices and if they have increased or decreased. More information can be available. 
